@@ -32,6 +32,10 @@ style: |
   .box strong { color: #ffcc00; } /* Yellow for bold text inside */
 ---
 
+<!--
+https://rnd195.github.io/marp-community-themes/theme/beam.html
+-->
+
 # Collective Seed Storage
 ### Urban Citizens as Active Agents of Agricultural Resilience
 
@@ -288,3 +292,9 @@ ___
 *Questions?*
 
 :envelope: vitaletti@diag.uniroma1.it
+
+[https://github.com/andreavitaletti/slides/blob/main/ICSSC2026/presentation.pdf](https://github.com/andreavitaletti/slides/blob/main/ICSSC2026/presentation.pdf)
+
+[https://arxiv.org/pdf/2501.15962](https://arxiv.org/pdf/2501.15962)
+
+![bg right:35% fit](img/QRCODE.png)
