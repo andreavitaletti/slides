@@ -222,6 +222,7 @@ https://github.com/ikatyang/emoji-cheat-sheet
 # R4: Lifetime 
 
 - **> 1 year** :slightly_smiling_face:
+- 1.5Ah LiFePo4 battery
 - Duty Cycle: active period about 6 seconds, sleep period >0.73 hours
 
 ![bg right:65% fit](img/current_new.png)
