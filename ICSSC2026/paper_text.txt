@@ -1,0 +1,795 @@
+Collective Seed Storage: Share a Tiny Space of
+Your Freezer to Increase Resilience of Ex-situ Seed
+Conservation
+Andrea Vitaletti
+Sapienza University of Rome
+vitaletti@diag.uniroma1.it
+Abstract—More than 95% of the crop genetic erosion articles
+analyzed in [1] reported changes in diversity, with nearly 80%
+providing evidence of loss. The lack of diversity presents a severe
+risk to the security of global food systems. Without seed diversity,
+it is difficult for plants to adapt to pests, diseases, and changing
+climate conditions. Genebanks, such as the Svalbard Global Seed
+Vault, are valuable initiatives to preserve seed diversity in a single
+secure and safe place. However, according to our analysis of
+the data available in the Seed Portal, the redundancy for some
+species might be limited, posing a potential threat to their future
+availability. Interestingly, the conditions to properly store seeds
+in genebanks, are the ones available in the freezers of our homes.
+This paper lays out a vision for Collective Seed Storage relying
+on a peer-to-peer infrastructure of domestic freezers to increase
+the overall availability of seeds. We present a Proof-of-Concept
+focused on monitoring the proper seed storing conditions and
+incentive user participation through a Blockchain lottery. The
+PoC proves the feasibility of the proposed approach and outlines
+the main technical issues that still need to be efficiently solved
+to implement the proposed vision.
+
+I. I NTRODUCTION
+There are over 50,000 edible plants worldwide, but just 15
+provide 90% of the world’s food energy intake and among
+these, rice, corn (maize), and wheat contribute up to two-thirds
+1
+. We have to put all our efforts to preserve those fundamental
+energy assets.
+The need for seed diversity A key objective in preserving
+these plants is to protect seed diversity, that is, the wide range
+of plant species, cultivars and genetic materials found within a
+given crop. This genetic diversity is a vital resource on which
+the future of our food systems depends.
+As climate change intensifies, bringing extreme weather
+events along with emerging pests and diseases, the presence
+of specific genes becomes critical. These genes enable certain
+crop varieties to withstand heat, drought, pests, and pathogens,
+forming the foundation of agricultural resilience and adaptation.
+A limited seed pool not only threatens our ability to cope
+with environmental stresses but also risks the loss of flavor,
+nutritional value, and the cultural heritage embedded in traditional cuisines. Genetic diversity improves agriculture’s ability
+to adapt to changing climates, regional growing conditions,
+and evolving consumer preferences.
+1 https://education.nationalgeographic.org/resource/food-staple/
+
+Without broad access to diverse crop varieties, future generations will face serious constraints in shaping agriculture to
+meet their needs and respond to environmental challenges.
+Our preservation efforts should also extend to Crop Wild
+Relatives (CWRs), as they play an important role. They are
+wild plant species that are closely related to cultivated crops
+and can provide genetic diversity that may not be available
+in current cultivated varieties. This diversity may be used to
+improve the productivity, resilience, and quality of agricultural
+products. The Earth is losing plant genetic diversity at an
+unprecedented rate. More than 95% of the crop genetic erosion
+articles analyzed in [1] reported changes in diversity, with
+nearly 80% providing evidence of loss. The extent of this
+loss varied depending on species, taxonomic and geographic
+scale, region, and analytical approach. In many countries, seed
+diversity has been irreversibly diminished, limiting farmers’
+crop options.
+Efforts to preserve seed diversity. Preservation of seed
+diversity is considered a common fundamental goal among the
+countries organized in the Multilateral System of Access and
+Benefit Sharing (MLS [2]), part of the International Treaty on
+Plant Genetic Resources for Food and Agriculture (PGRFA).
+MLS allows member states to share and exchange plant
+genetic resources for research, breeding, conservation, and
+training. Recipients sign a Standard Material Transfer Agreement (SMTA) [3] that specifies conditions for use and benefit
+sharing. MLS includes 64 of the world’s most important crops
+that together represent 80% of all human consumption derived
+from plants [4].
+The main strategies to preserve seed diversity are conservation in situ and ex situ .
+In situ conservation relies on the conservation of seeds
+and plants in their natural or traditional environment, such
+as farms where traditional varieties (landraces) are maintained or in the wild where CWR grow. Participatory seed
+breeding and community seed systems engage local farmers
+in storing, conserving, sharing, and improving diverse crop
+varieties adapted to local conditions. Seed guardians (or seed
+custodians), who may be smallholder farmers, indigenous
+communities, or members of community seed banks, such as
+[5]–[8], actively preserve, cultivate, and exchange traditional
+or locally adapted varieties, often operating outside formal
+industrial seed systems.
+
+Criteria
+
+In Situ Conservation
+
+Ex Situ Conservation
+
+Location
+Evolution
+Risk of Loss
+Cultural Link
+Access & Sharing
+Documentation
+Cost
+Best Use
+
+Natural environment / farms
+Plants continue to adapt naturally.
+Higher (e.g., land-use change, climate)
+Strong; maintains traditional knowledge
+Local and informal
+Often limited or informal
+Lower short-term cost
+Wild relatives, landraces
+TABLE I
+
+Seed banks, seed vaults, labs
+Static; no natural evolution
+Lower (secure and controlled conditions)
+Weak or absent
+Global access via formal mechanisms (e.g., SMTA)
+Detailed and standardized
+Higher cost (infrastructure and maintenance)
+Major crops, backup, and global breeding
+
+C OMPARISON BETWEEN IN SITU AND EX SITU SEED CONSERVATION METHODS .
+
+Although in situ conservation has the merit of actively
+participating local communities and farmers, thus contributing
+to the conservation of not only the seeds, but also the traditions
+and skills to take care of them, the access to the material
+and the documentation is fragmented and difficult to handle.
+These problems have led to the development of several more
+structured ex situ conservation initiatives, where seeds are
+preserved outside their natural habitat in the so-called seed
+banks.
+Seed banks. A seed bank is a gene bank, that stores seeds to
+preserve genetic diversity, namely the genes that make each
+plant variety unique. It ensures that this genetic heritage is
+safely conserved and available for people to use.
+The Millennium Seed Bank Partnership (MSB) [9] is the
+largest ex situ plant conservation program in the world, mainly
+focused on wild species. MSB focuses on the conservation of
+as many species as possible (interspecific diversity) prioritizing
+those that are endangered, endemic, or economically important. It provides seeds to registered organizations for research,
+restoration, and reintroduction purposes.
+Crop Trust [10] is an international organization focused
+on building and supporting a global system of seed banks
+to preserve the genetic diversity of food crops, especially
+cultivated varieties and landraces. It provides long-term grants
+and partnership agreements to several international seed
+banks, particularly those within the Consultative Group on
+International Agricultural Research (CGIAR) system. CGIAR
+genebanks [11] manage collections of more than 20 staple
+crops in 10 locations across five continents to distribute seeds
+for research, training, and breeding under the MLS framework.
+Genesys is an online platform2 managed by Crop Trust that
+provides access to information about plant genetic resources
+conserved in genebanks around the world. It serves as a global
+catalogue, aggregating data on millions of accessions from
+over 450 genebanks, included CGIAR ones.
+The Crop Trust also co-manages the Svalbard Global Seed
+Vault in Norway (SGSV)3 , which serves as a global backup
+facility for seed banks worldwide [12]. Its purpose is to
+provide long-term backing for genebank collections to secure
+the foundation of our future food supply against threats such
+as mismanagement, accidents, equipment failures, funding
+cuts, war, sabotage, disease, and natural disasters. In 2019,
+2 https://www.genesys-pgr.org/
+3 https://www.seedvault.no/
+
+seeds were returned from Svalbard to restock an international
+genebank destroyed by the war in Syria.
+Contrary to MSB it is not open to researchers and the
+depositors are the only ones who can withdraw their own
+seeds. The focus of SGSV is to preserve as much diversity
+as possible within crop species and their wild relatives (intraspecific diversity).
+Seed banks must ensure that their holdings remain alive.
+They periodically check the viability of the samples, namely
+their ability to grow into productive plants and produce fresh
+material when needed. However, the fundamental strategy to
+preserve such diversity is the availability of good backup
+systems, namely other seed banks where duplicate samples
+are delivered for safe keeping.
+Seed preservation pipeline The standards for seed preservation [13]–[15] recommend implementing a comprehensive
+preservation pipeline, summarized in Table II. The underlying
+principle is that safe storage alone is insufficient; it is equally
+essential to establish the conditions and maintain the knowledge necessary to reliably propagate seeds over time. In this
+paper, however, we focus exclusively on the second step of the
+pipeline, motivated by the open problem discussed in the next
+section. In Section V, we explain why, despite this limitation,
+we consider this step a fundamental contribution toward the
+eventual implementation of the full preservation pipeline in a
+fully distributed setting, encouraging citizen participation.
+Open problem The SGSV is unanimously considered the
+backup seed facility that provides the highest standards of
+safety and security. The location where SGSV is built lacks
+tectonic activity and has permafrost, which aids in preservation; furthermore, it is 130 m above sea level, keeping
+the site dry even if the ice caps melt. The refrigeration
+units also cool the seeds to -18,-20 ◦ C, the internationally
+recommended standard temperature [13]. If the equipment
+fails, it is estimated that it will take two centuries for it to
+warm to 0 ◦ C.
+The 2023 SGSV Annual Progress Report [16] reveals that, 1267127 samples deposited by more than 100
+genebanks/institutes and representing more than 6,000 plant
+species are stored in the facility. The SGSV now safeguards
+seeds of more than 250,000 types of wheat, 160,000 types of
+rice and 46,000 types of maize, the fundamental sources of
+food energy intake.
+Figure 1 shows the distribution of the depositors (i.e.
+
+Step
+Acquisition of germplasm
+
+Drying and storage
+
+Seed viability monitoring
+
+Regeneration
+
+Characterization
+
+Evaluation
+
+Documentation
+
+Distribution and exchange
+
+Safety duplication
+
+Security and personnel
+
+Description
+Collecting seeds or other
+reproductive material from diverse
+sources, including wild relatives,
+local varieties, and breeding
+programs, to ensure genetic
+diversity.
+Reducing seed moisture content
+and storing under controlled
+conditions (temperature, humidity)
+to maximize longevity and
+maintain viability.
+Periodically testing seeds to
+ensure they remain capable of
+germination and identifying when
+regeneration is needed.
+Growing out seeds to produce
+fresh seeds, maintaining genetic
+integrity while replacing aging or
+depleted stock.
+Documenting observable traits
+(morphology, growth habits,
+resistance traits) to describe the
+germplasm and facilitate its use.
+Assessing performance under
+different conditions, including
+agronomic, nutritional, or
+stress-tolerance traits, to determine
+the value of the germplasm.
+Recording all relevant data on
+origin, traits, storage conditions,
+and usage to ensure traceability
+and informed utilization.
+Providing seeds to breeders,
+researchers, farmers, or other
+genebanks to promote use,
+collaboration, and conservation.
+Creating backup copies of
+germplasm, often in separate
+locations or facilities, to protect
+against loss from disasters or
+failures.
+Security and personnel – Ensuring
+the physical, legal, and operational
+security of the seed collection,
+and maintaining trained staff to
+manage the conservation process.
+TABLE II
+
+S TEPS IN THE SEED CONSERVATION PIPELINE
+
+genebanks and institutes) for the species obtained by analyzing
+the data from the SGSV Seed Portal 4 .
+The vast majority of species have a single depositor. In
+other words, the data show that the samples are available
+at SGCV and at the depositor only. As an example, Oryza
+sativa (i.e. the Asian cultivated rice) is the most common rice
+cultivated as a cereal. The result of the query to the Seed
+Portal with the keyword Species: Oryza sativa is 29 depositors,
+171193 accessions and 136 countries of collection. The same
+query with the keyword Species: Hygroryza aristata, gives
+1 depositor (i.e. the Rice Research Institute), 4 accessions
+and 1 country of collection as also confirmed by the Genesys
+online platform. Rice is currently by far more “important” than
+Hygroryza for food supply, however, the Hygroryza is a CWR
+4 https://seedvault.nordgen.org/Search
+
+Fig. 1. The distribution of the depositors for the species in the SGSV. The
+majority have a single depositor posing a potential threat to seed availability.
+
+of rice [17] and, as already observed, it might contribute to
+the development of more resilient new rice varieties.
+The low level of redundancy in the availability of seeds
+samples backups for the majority of the species, might have
+serious consequences; even in the best genebanks, things
+can occasionally go disastrously wrong. The question we
+aim to investigate in this paper is whether it is possible to
+further increase the overall availability of seeds by a robust
+and resilient backup infrastructure capable of preserving seed
+diversity with limited investments.
+Contributions of the paper. We recognize that a comprehensive strategy for seed preservation must address all
+components of the conservation pipeline skteched in table II
+and should actively encourage citizen participation to raise
+awareness and engagement. Nonetheless, having a robust and
+resilient backup remains a fundamental element of such a
+strategy. In this paper, we focus specifically on this essential,
+though narrowly defined, objective.
+Interestingly, the temperature conditions in domestic freezers can meet the international standard for long-term seed
+conservation [13], [14]. The main idea of this paper is to
+develop a system inspired by the principles of the shared
+economy, capable of safely storing the seeds in our home
+freezers, thus contributing to the development of a Collective
+Seed Storage (CSS) that can increase the availability of seeds
+and the overall resilience of the world’s crop diversity. To our
+knowledge, this paper is the first attempt to build a peer-to-peer
+infrastructure to preserve seed diversity. We first identified a
+set of requirements, and then we built a proof-of-concept of the
+CSS that proves the technical feasibility of two fundamental
+tasks, namely the IoT monitoring activity of seed conservation
+conditions in domestic freezers and the interaction of the IoT
+node with a Blockchain smart contract to autonomously manage a lottery to incentivize user participation. The development
+of this PoC, allows us to identify the main issues that need to
+be investigated in future work.
+II. BACKGROUND AND S TATE OF THE A RT
+Moisture, temperature, and the proportion of oxygen are key
+environmental factors that affect seed deterioration and loss of
+viability [18]. Reducing seed moisture content (MC), namely
+
+Fig. 2. Figure 2 from [18] Creative Commons CC BY license. Predicted
+survival curves for seeds of foxglove at different conditions
+
+the amount of water in the seed, to certain thresholds increases
+longevity predictably for approximately 90% of species. These
+species are classified as being orthodox in their seed storage
+requirements, and generally retain viability and germinability
+even after storage for long periods under suitably dry, cool
+conditions. In general, most of our food energy intake from
+plants is orthodox. Examples of crop plants that bear orthodox
+seeds are wheat (Triticum aestivum L.), cereal rye (Secale
+cereale L.), and legumes such as the common bean (Phaseolus
+vulgaris L.), rice (Oryza sativa) and in general most grains and
+legume types, namely most of our food energy intake from
+plants.
+The Seed Information Database5 provides a tool to Predict
+Storage Time for orthodox seeds according to the equations
+of Ellis and Roberts [19]. Figure 2 is taken from [18] and
+shows the predicted survival curves for seeds of foxglove
+(Digitalis purpurea L.) at different conditions of temperature,
+relative humidity (RH) and moisture content (MC). The figure
+clearly shows that the long-term genebank storage conditions,
+namely -20◦ C and 4% seed moisture content, allow us to
+preserve germination for years. The Food and Agriculture
+Organization (FAO) standardized the process for long-term
+storing of orthodox seeds in [13], [14]. We require our system
+to comply with these standards, as specified in R1, section III.
+In this paper, we share the definition of shared economy by
+Frenken et al. “consumers granting each other temporary access to under-utilized physical assets (idle capacity), possibly
+for money.” [20].
+Example of shared economy ranges from carpooling (e.g.
+BlaBlaCar), to share rooms in an apartment (e.g. Airbnb) or
+to utilize transport capacity that may be wasted in inefficient
+transport operations (e.g. Shiply), just to mention few exam-
+
+ples. In our case, we share the currently idle capacity of a tiny
+portion of the freezer, sufficient to store the seeds.
+The sharing economy can benefit from integration with the
+Internet of Things (IoT) [21]. IoT technologies can be used
+to monitor the availability of idle capacity and to verify that
+specific requirements are met (see, for example, requirement
+R1 in Section III). In the scenario we envision, however, IoT
+is not merely a means of monitoring proper conservation conditions; it also serves as a tool for sharing objective, verifiable
+knowledge among participants. In this way, IoT contributes to
+the collective knowledge base required to fully implement the
+seed preservation pipeline introduced in Section I.
+A vast body of literature explores the data economy and
+shared-resource paradigms. For instance, in [22], the authors
+present the design, implementation, and evaluation of an
+ambient environment-aware system that supports fine grained
+urban air quality monitoring through mobile crowdsensing
+integrated into a bike sharing infrastructure.
+SETI@home6 and Folding@home7 are two prominent examples of the sharing economy in which the idle capacity,
+namely, the computational power of users’ personal computers,
+is used to support large scale distributed computations, such
+as radio signal analysis and protein dynamics simulation.
+Unlike the aforementioned examples, although the freezer
+space required is limited, the seeds are expected to be stored
+for extended periods, potentially spanning several years. While
+participation in a global effort for seed preservation should not
+necessarily require compensation, the long-term nature of seed
+storage may nonetheless limit user participation. This, in turn,
+calls for the definition of appropriate incentive mechanisms to
+encourage the involvement of a sufficiently large number of
+participants.
+As discussed in [23], enjoyment, economic incentives, reputation, and self-fulfillment are among the primary motivations
+for participation in sharing-economy initiatives. In this context,
+we are particularly interested in investigating how blockchain
+technology can be leveraged to distribute and manage such
+incentives.
+In [24], the authors explore blockchain-based incentive
+mechanisms in which participation in a lottery serves as
+the reward: only peers actively contributing to the CSS are
+eligible to purchase tickets and potentially win. This approach
+illustrates how decentralized technologies can be used to align
+individual incentives with collective goals.
+III. R EQUIREMENTS
+In this section we describe the main requirements that drive
+the design of the CSS proof-of-concept.
+R1 Storing conditions of seeds in domestic freezers must
+comply with [13], [14]. In this paper, we focus on longterm storage of orthodox seeds. Specifically we assume
+that after drying, samples meant for long-term storage
+are packaged under controlled conditions, in clearly
+6 https://setiathome.berkeley.edu/
+
+5 https://ser-sid.org/viability/storage-time
+
+7 https://foldingathome.org/
+
+labelled airtight containers (Standard 4.2.2 [13]) and
+then samples are ideally stored at -18◦ C ± 3 percent and
+relative humidity of 15 ± 3 percent (Standard 4.2.3 [13]).
+Figure 4 of [14] is a summary diagram of the workflow
+and activities for drying and storage and clarifies that the
+use of subzero freezers is acceptable if ideal conditions
+are not available.
+The success of this project relies on the active and numerous
+participation of users. To encourage the participation, the
+system should:
+R2 Simplify the installation without requiring any specific
+technical skill or infrastructure. The installation of the
+system should be user friendly and based on off-theshelves equipment. We only assume users have a WiFi
+at home.
+R3 Not require unnecessary cables which complicates and
+limit the installation options.
+R4 Run for at least 1 year without the need of intervention
+by the user.
+R5 Support the implementation of suitable incentive mechanisms.
+IV. P ROOF - OF - CONCEPT
+The main purpose of this section is to demonstrate the
+feasibility of the proposed approach by the implementation
+of a Proof-of-Concept (PoC) of the Collective Seed Storage
+driven by the above requirements. The PoC will also outline
+the main technical problems that still need to be efficiently
+solved to realize a fully fledged solution.
+The airtight container storing the seeds is equipped with a
+humidity and temperature sensor (the DHT22) connected to
+an IoT sensor node, in our case the Esp32 Devkit V1 (Esp32
+in the following), which implements the logic to acquire the
+sensor readings and to deliver them to the smart contract in
+charge of dispensing the incentives to the participants.
+The Esp32 delivers the data to the smart contract by the onboard WiFi. WiFi access points are nowadays largely available
+in homes (see R2) making this technology appropriate for the
+project, furthermore, the nature of the phenomenon to be monitored does not require frequent data acquisition; temperature
+and humidity in the freezer do not suddenly change. For this
+reason, the node alternates long period of deep sleep with
+a short active period where two main tasks are performed,
+namely data acquisition and communication. In deep sleep
+mode, only the RTC Timer and RTC Memory are active,
+reducing the consumption to 10µA. The resulting low duty
+cycle prolongs the lifetime of the node, and allows us to meet
+the requirement R4 as quantified in section IV-C.
+To satisfy R3, the Esp32 is powered by a 3.6V LiFePo4.
+This solution does not require any voltage regulator that would
+introduce losses. In the future, we plan to design a more
+efficient custom board without all unnecessary components.
+The ESP32 operating temperature range8 is from −40 to
+125 ◦ C, so in principle it can also be placed into the freezer
+8 https://www.espressif.com/sites/default/files/documentation/esp32
+
+datasheet en.pdf
+
+together with the DHT22 temperature and humidity sensor,
+however, the wifi connectivity could be severely hindered. In
+our experiments, when the ESP32 is placed into the freezer,
+more then 40% of the packets do not reach the server.
+Furthermore, it is well known the the efficiency of batteries
+decreases significantly in cold temperatures: at -20°C to -40°C,
+a LiFePo4 battery may only achieve about 60% to 40% of its
+rated capacity9 . Finally, despite being small, the ESP32 steal
+some further space in the user’s freezer. For these reasons,
+the DHT22 is placed into the freezer and it is connected to
+the ESP32 placed outside, by three tiny wires. This solution
+is not fully consistent with R3, but it is acceptable and the
+arguments discussed above togheter with the simplicity of the
+installation, makes it compliant with R2.
+A sketch of the architecture of the Proof-of-Concept is
+shown in figure 3. The PoC is build with PlatformIO 10
+and the code is available on https:// github.com/ andreavitaletti/
+PlatformIO/ tree/ main/ Projects/ web3E SC.
+In the following, we discuss the implementation of the two
+main tasks performed by the PoC during the active period,
+namely monitoring the correct storage of seeds and delivering
+the observed data to the smart contract in charge of incentive
+users participation.
+A. Monitoring the Correct Storage of Seeds
+The temperature and humidity conditions at which seeds are
+stored in the freezer, are monitored by a DHT22 sensor (see
+R1). It features excellent technical specifications also in terms
+of power consumption. The sensor can be queried by a single
+wire protocol: when the sensor node sends the start signal, the
+DHT22 change from stand-by-mode (40 µA) to measuringmode (1 mA). The DHT22 will get back to stand-by-mode
+again upon the completion of the data acquisition.
+Figure 4 shows the results of a monitoring activity on
+a domestic freezer (BOSCH KGN39X23) set at -18 ◦ C of
+temperature. Samples are taken every 5 minutes. After an
+initial transient period, the observed temperature oscillates
+significantly. These conditions do not fulfill the Standard
+4.2.3 [13] but are consistent with the acceptable subzero conditions indicated in [14] when the ideal ones are not available.
+The implications of these conditions in seed conservation and
+the possibility to reach the ideal ones in domestic freezer are
+object of future studies.
+Domestic freezers are occasionally opened to access the
+frozen products. We performed a simple experiment to evaluate the impact of this activity on the temperature. We left the
+freezer close for 1 hour and then we opened it for 30 secs.,
+a more than sufficient interval of time to access the frozen
+products; the impact on the temperature is marginal at the
+first decimal figure of the temperature.
+9 https://www.evlithium.com/Blog/lifepo4-battery-temperature-range-capacity-voltage.
+html
+10 https://platformio.org/
+
+Fig. 3. The architecture of the Proof-of-Concept for the Collective Seed Storage. A temperature and humidity sensor is placed into the freezer and it is
+connected to an IoT sensor node placed outside. The node communicates the readings on the conservation conditions to a smart contract in charge of dispensing
+incentives to encourage users’ participation.
+
+Fig. 4. The observed temperature drops immediately after the placement of
+the sensor into the freezers, then fluctuates noticeably.
+
+B. Delivering the observed data to the smart contract
+Once data have been acquired, they are delivered to the
+blockchain smart contract in charge of distributing the incentives to encourage users’ participation (see R5). In our PoC,
+we envision the development of a blockchain lottery, where
+users can participate (and possibly have higher chances of
+winning) if and only if they are active peers of the CSS. The
+lottery is implemented with a simple smart contract similar
+to that available at https://github.com/Scofield-Idehen/Lottery
+Contract/blob/main/Lot Contract.sol. The function enter(uint
+temp, uint hum) allows the participation only of active
+CSS users, namely users that provide data on temperature and humidity in the acceptable range. The func-
+
+tion fund, allows anyone to fund the lottery. The code
+of the smart contract, together with some sample transactions, can be accessed at https://sepolia.etherscan.io/address/
+0x19aeacb63eba19e5e159a5870fa6afce5d3b37ec.
+A more complex lottery and a through study on the most
+suitable incentive mechanisms to be implemented in the smart
+contract is beyond the scope of this paper and will be investigated in future work.
+Most solutions interfacing IoT nodes with smart contracts
+on the Blockchain, relays on gateways. This would greatly
+simplify the integration, but we cannot expect that all the
+houses have the necessary skills and tools to deploy such a
+relatively complex infrastructure (see R2). For this reason, all
+the code to interact with the smart contract through the Infura
+API11 is contained in the firmware of the resource constrained
+ESP32. This might be a pretty challenging solution due to
+the limited memory available on the ESP32, indeed our code,
+based on the WEb3E library 12 , occupies 93% of the available
+flash. This solution foresees only outgoing transmissions (from
+the home to the Internet), thus increasing the security against
+possible network threats.
+The WEb3E library 13 allows the node to interact with
+the Solidity smart contract shown in Listing IV-B; it is a
+simple key-value storage, where the key is the address of the
+node and value contains the last observed temperature and
+humidity. The smart contract is deployed on the Sepolia testnet
+and can be accessed at https://sepolia.etherscan.io/address/
+0xeda34ef93426dcffde0e9f7c92370d6f8ad9f233 where also
+the trasactions from the nodes can be inspected.
+The implementation required few minor changes to the
+library, the most important of which is the encoding of the con11 https://www.infura.io/
+12 https://github.com/AlphaWallet/Web3E
+13 https://github.com/AlphaWallet/Web3E
+
+listingA
+minimalistic
+Smart
+Contract
+to
+Store/Retrive
+Sensor
+Readings
+In-chain.
+[linenos,tabsize=2,breaklines,xleftmargin=20pt]soliditysc.sol
+tract data instead of relying on the contract.SetupContractData
+function provided by the library; this was necessary to handle
+some run-time issues with the variadic implementation of the
+function.
+DHT22 readings are given as floating numbers that are
+not supported by Solidity. To simplify the management of
+readings by the smart contract also for negative values, we
+applied the following simple formula 40 + rount(temp)
+with temp ranging from -40°C to 80°C, as defined in the
+technical specification of the DHT22. Consequently, the value
+transmitted to the smart contract is a single byte representing
+a value between 0 (-40°C) and 120 (80°C). The transactions
+can be accessed at the same URL of the smart contract. Floats
+can be also encoded in 4 bytes using the IEEE 754 standard,
+but this makes more complex the logic of the smart contract.
+C. Energy Consumption
+In this section we report on the experiments to evaluate the
+energy consumption through an INA21914 . The Esp32 devkit
+V1, has an always on red led, with a fix consumption of 10mA.
+We unsoldered the led and the consumption dropped to less
+than 4mA, however still pretty far from the nominal 10µA in
+deep sleep. In the following, to evaluate the potentials of our
+work, we assume to achieve the nominal current consumption
+during the sleeping period.
+We sampled several active periods and figure 5 shows
+the current consumption in one of those periods; similar
+values have been observed for the others. Active periods are
+made of two tasks, the init task where all the necessary
+components are initialized, and the com where the data are
+read by the DHT and are transmitted to the smart contract.
+The init task lasts about 2400ms (≈0.0007h) at about 50mA,
+namely ≈ 0.03mAh, while the com task lasts about 3160ms
+(≈0,0009h) at about about 100mA, namely ≈ 0.09mAh. We
+assume the duration of the sleep period is X hours at 10µA,
+namely 0.01XmAh. The whole consumption for a cycle is
+0.03mAh + 0.09mAh + 0.01XmAh. The ESP32 is powered
+by a common 3.6v, 1.5Ah LiFePo4 battery. This guarantees a
+number of cycles 1500mAh/(0.12+0.01X)mAh. The length
+of a cycle is 0.0016 + X hours. The whole duration in hours
+will be 1500/(0.12+0.01X)·(0.0016+X) and with X ≥ 0.73
+hours, we meet requirement R4, namely a duration of 1 year.
+Note that the smart contract gets in input an unsigned int
+made of 32 bytes, so we can pack up to 32 readings (they need
+1 byte), into a single call, thus reducing the overall number
+of required transmissions.
+V. C ONCLUSIONS AND F UTURE W ORK
+The pipeline for the conservation of orthodox seeds in seed
+genebanks [14] involves the steps summarized in table II. Each
+14 https://www.ti.com/lit/ds/symlink/ina219.pdf
+
+Fig. 5. Sampling current consumption with the INA219
+
+of these steps is fundamental for a successful preservation
+effort. In this paper, we concentrate on the storage step.
+Although it represents only a single element of the complex
+pipeline, it is nevertheless of fundamental importance. The
+analysis of the data reveals that even SGSV, the most renowned
+backup seed facility, has limited redundancy for certain seed
+samples. This observation forms the basis of our vision
+for Collective Seed Storage (CSS), a novel shared-economy
+approach for the long-term storage of seeds in domestic
+freezers. The CSS concept seeks to support the fundamental
+goal of preserving seed diversity by leveraging IoT devices to
+monitor proper storage conditions and blockchain technology
+to distribute incentives that encourage active user participation.
+A modern approach to seed preservation should promote
+more active citizen participation (e.g., Seed Guardians) that
+extends beyond the mere act of storage. Although the preservation of seeds in domestic freezers is a novel and valuable
+practice, it may remain, to some extent, a passive activity.
+However, we argue that the network of IoT devices forming the
+CSS is not only a powerful tool for monitoring conservation
+conditions, but also a means to initiate structured knowledge
+sharing on effective seed preservation. In particular, the availability of quantitative, objective data can support evidencebased practices and serve as a foundation for more active
+citizen engagement.
+Greater involvement, such as participation in seed regeneration and cultivation, would not only directly enhance conservation efforts but also equip participants with practical knowledge of seed growth and management. Although such activities
+lie beyond the scope of this work, we believe that the sharingeconomy principles underlying our CSS concept represent a
+first step in this direction, laying the groundwork for deeper,
+hands-on participation in the long-term preservation of seed
+diversity.
+The PoC proves the feasibility of the main technical components of our vision and a future collaboration with fridge
+producers, might support the development of new products
+supporting the CSS functionality since the design, also on
+
+industrial refrigerators. The PoC also allowed us to identify
+the priorities to be investigated in future work as summarized
+below.
+The monitoring activity confirms that acceptable subzero
+conditions are achievable in domestic freezers; however, to
+what extent we can better approach the ideal conditions
+prescribed in Standard 4.2.3 [13] and the implications on
+seed conservation of the observed temperature fluctuations,
+need further investigation. While the current board proves
+the feasibility of the proposed approach, the power consumption can still be optimized and more energy-efficient custom
+boards, such as the trigboard15 , can significantly improve the
+performance. The PoC relies on periodic transmission of the
+observed conditions, the use of an alternative approach based
+on the communication of abnormal events only, possibly based
+on Ultra Low Power Coprocessor Programming, should be
+evaluated.
+In this work, user participation is incentivized through
+a simple lottery. Looking ahead, we aim to explore more
+sophisticated mechanisms, potentially informed by a gametheoretical framework. Beyond assessing technical feasibility,
+it is essential to evaluate costs and design strategies that effectively encourage engagement. These strategies could combine
+advanced tokenomics with the smart monitoring of seeds to
+deliver value-added services; for instance, alerting users to
+conditions that may compromise food preservation in their
+refrigerators. By doing so, the system not only promotes active
+participation in seed conservation but also provides tangible
+everyday benefits, bridging the gap between individual action
+and collective impact.
+Facilitating easy and routine access to crop genetic resources is a fundamental goal of the Multilateral System
+[2]. These resources may include local seed collections preserved in small refrigeration units within research laboratories,
+national seed banks maintained by government institutions,
+or comprehensive collections held by international research
+centers that encompass all known varieties of a given crop.
+Our goal is to explore how the paper’s proposed participative
+approach can be integrated into the MLS. This includes
+determining how to regulate the exchanges involving the new
+category of users sharing their fridges, utilizing the Standard
+Material Transfer Agreements (SMTAs).
+R EFERENCES
+[1] C. K. Khoury, S. Brush, D. E. Costich, H. A. Curry, S. de Haan,
+J. M. M. Engels, L. Guarino, S. Hoban, K. L. Mercer, A. J. Miller, G. P.
+Nabhan, H. R. Perales, C. Richards, C. Riggins, and I. Thormann, “Crop
+genetic erosion: understanding and responding to loss of crop diversity,”
+New Phytologist, vol. 233, no. 1, pp. 84–118, 2022. [Online]. Available:
+https://nph.onlinelibrary.wiley.com/doi/abs/10.1111/nph.17733
+[2] FAO, “The multilateral system,” 2025, last accessed April 2025
+https://www.fao.org/plant-treaty/areas-of-work/the-multilateral-system/
+landingmls/en/.
+[3] I. T. on Plant Genetic Resources for Food and Agriculture, “Easy-smta
+homepage,” 2025, last accessed June 2025 https://mls.planttreaty.org/itt/
+index.php.
+15 https://trigboard-docs.readthedocs.io/en/latest/
+
+[4] FAO, “Tannex i: List of crops covered under the multilateral system,” 2025, last accessed April 2025 https://www.fao.org/plant-treaty/
+areas-of-work/the-multilateral-system/annex1/en/.
+[5] Navdanya, “Navdanya international,” 2025, last accessed April 2025
+https://navdanyainternational.org/about-us-navdanya-international/.
+[6] S. S. Exchange, “Keeping heirloom seeds in our gardens and on our
+tables,” 2025, last accessed April 2025 https://seedsavers.org/.
+[7] T. C. S. Library, “The connected seeds library,” 2025, last accessed April
+2025 https://www.connectedseeds.org/.
+[8] W. F. Program, “Supporting latin america’s ’custodians of the
+seeds’,” 2025, last accessed April 2025 https://www.wfp.org/stories/
+supporting-latin-americas-custodians-seeds.
+[9] MSBP, “Millennium seed bank partnership homepage,” 2025, last accessed June 2025 https://brahmsonline.kew.org/msbp.
+[10] C. Trust, “Crop trust homepage,” 2025, last accessed June 2025 https:
+//www.croptrust.org/.
+[11] C. G. on International Agricultural Research (CGIAR), “Cgiar
+genebanks homepage,” 2025, last accessed June 2025 https://genebanks.
+cgiar.org/.
+[12] M. Hopkin, “Biodiversity: Frozen futures,” Nature, vol. 452, no. 7186,
+pp. 404–405, Mar 2008. [Online]. Available: https://doi.org/10.1038/
+452404a
+[13] C. on Genetic Resources for Food and Agriculture., “Genebank standards for plant genetic resources for food and agriculture,” 2014,
+available from https://www.fao.org/4/i3704e/i3704e.pdf.
+[14] ——, “Practical guide for the application of the genebank standards for
+plant genetic resources for food and agriculture conservation of orthodox
+seeds in seed genebanks,” 2014, available from https://doi.org/10.4060/
+cc0021en.
+[15] MSB, The Millennium Seed Bank Partnership (MSBP) Seed
+Conservation Standards for ‘MSBP Collections’. MSB, 2022.
+[Online]. Available: https://brahmsonline.kew.org/Content/Projects/
+msbp/resources/Training/MSBP-Seed-Conservation-Standards.pdf
+[16] NordGen, “Svalbard global seed vault - annual progress report
+2023,” 2023, available from https://www.nordgen.org/media/tyreut4t/
+seedvault-annualprogressreport2023.pdf.
+[17] J. Jacquemin, D. Bhatia, K. Singh, and R. A. Wing, “The
+international oryza map alignment project: development of a genuswide comparative genomics platform to help solve the 9 billion-people
+question,” Current Opinion in Plant Biology, vol. 16, no. 2, pp.
+147–156, 2013, genome studies molecular genetics. [Online]. Available:
+https://www.sciencedirect.com/science/article/pii/S1369526613000344
+[18] M. De Vitis, F. R. Hay, J. B. Dickie, C. Trivedi, J. Choi, and R. Fiegener,
+“Seed storage: maintaining seed viability and vigor for restoration use,”
+Restoration Ecology, vol. 28, no. S3, pp. S249–S255, 2020.
+[19] R. H. ELLIS and E. H. ROBERTS, “Improved Equations for the
+Prediction of Seed Longevity,” Annals of Botany, vol. 45, no. 1, pp.
+13–30, 01 1980.
+[20] K. Frenken and J. Schor, “Putting the sharing economy into perspective,”
+Environmental Innovation and Societal Transitions, vol. 23, pp. 3–10,
+2017, sustainability Perspectives on the Sharing Economy.
+[21] D. J. Langley, J. van Doorn, I. C. Ng, S. Stieglitz, A. Lazovik,
+and A. Boonstra, “The internet of everything: Smart things and their
+impact on business models,” Journal of Business Research, vol. 122,
+pp. 853–863, 2021. [Online]. Available: https://www.sciencedirect.com/
+science/article/pii/S014829631930801X
+[22] D. Wu, T. Xiao, X. Liao, J. Luo, C. Wu, S. Zhang, Y. Li, and Y. Guo,
+“When sharing economy meets iot: Towards fine-grained urban air
+quality monitoring through mobile crowdsensing on bike-share system,”
+Proc. ACM Interact. Mob. Wearable Ubiquitous Technol., vol. 4, no. 2,
+Jun. 2020. [Online]. Available: https://doi.org/10.1145/3397328
+[23] J. Hamari, M. Sjöklint, and A. Ukkonen, “The sharing economy:
+Why people participate in collaborative consumption,” Journal of the
+Association for Information Science and Technology, vol. 67, no. 9, pp.
+2047–2059, 2016.
+[24] R. Han, Z. Yan, X. Liang, and L. T. Yang, “How can incentive
+mechanisms and blockchain benefit with each other? a survey,”
+ACM Comput. Surv., vol. 55, no. 7, Dec. 2022. [Online]. Available:
+https://doi.org/10.1145/3539604
+
+
