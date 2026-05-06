@@ -102,7 +102,7 @@ Vital to adapt to climate change, extreme weather, pests, and diseases
 
 ---
 
-# The Open Problem: Limited Redundancy
+# Open Problem
 
 - The vast majority of species, mostly CWR in the SGSV, have only a **single depositor** [[2]](https://seedvault.nordgen.org/Search).
 - **The Threat:** if a disaster hits both the primary seed bank and the vault, the species could be lost.
