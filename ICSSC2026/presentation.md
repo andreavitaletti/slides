@@ -6,6 +6,7 @@ paginate: true
 header: "Collective Seed Storage"
 footer: "ICSSC2026"
 style: |
+  @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css');
   section {
     font-size: 28px;
   }
@@ -34,6 +35,7 @@ style: |
 
 <!--
 https://rnd195.github.io/marp-community-themes/theme/beam.html
+https://fontawesome.com/icons
 -->
 
 # Collective Seed Storage
@@ -287,11 +289,14 @@ ___
 
 --- 
 
+
 # Thank you!
 
-*Questions?*
+### Questions?
 
-:envelope: vitaletti@diag.uniroma1.it
+<!-- :envelope: vitaletti@diag.uniroma1.it -->
+<i class="fa-solid fa-at"></i> vitaletti@diag.uniroma1.it
+<i class="fa-brands fa-github"></i> [https://andreavitaletti.github.io/](https://andreavitaletti.github.io/)
 
 [https://github.com/andreavitaletti/slides/blob/main/ICSSC2026/presentation.pdf](https://github.com/andreavitaletti/slides/blob/main/ICSSC2026/presentation.pdf)
 
