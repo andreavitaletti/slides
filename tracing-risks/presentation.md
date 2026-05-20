@@ -3,7 +3,7 @@ marp: true
 theme: beam
 paginate: true
 header: "Anonymous Tracing: A Dangerous Oxymoron"
-footer: "Bonnetain et al. — risques-tracage.fr"
+footer: "risques-tracage.fr"
 style: |
   @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css');
   section {
@@ -74,11 +74,25 @@ style: |
 # Anonymous Tracing: A Dangerous Oxymoron
 ### A Risk Analysis for Non-Specialists
 
-**Bonnetain, Canteaut, Cortier, Gaudry, Hirschi, Kremer, Lacour, Lequesne, Leurent, Perrin, Schrottenloher, Thomé, Vaudenay, Vuillot**
+Slides by Andrea Vitaletti based on <i class="fa-solid fa-globe"></i> [https://risques-tracage.fr/](https://risques-tracage.fr/)
 
-*University of Waterloo · Inria · CNRS · EPFL · Sorbonne Université*
+---
 
-![bg right:35% fit](img/cover.png)
+# Context: COVID-19 Contact Tracing Apps
+
+<div class="warn">
+
+<i class="fa-solid fa-key"></i> Studies suggest the employment of Contact Tracing Apps for epidemic control of COVID-19 
+
+
+</div>
+
+E.g. [Quantifying SARS-CoV-2 transmission suggests epidemic control with digital contact tracing](https://www.science.org/doi/10.1126/science.abb6936) 
+
+<i class="fa-solid fa-globe"></i> [https://bdi-pathogens.shinyapps.io/covid-19-transmission-routes/](https://bdi-pathogens.shinyapps.io/covid-19-transmission-routes/)
+<i class="fa-solid fa-globe"></i> [https://doi.org/10.1038/s41587-022-01350-x](https://doi.org/10.1038/s41587-022-01350-x)
+
+![bg right:40% fit](assets/images/effe.jpg)
 
 ---
 
@@ -90,12 +104,12 @@ style: |
 
 <div class="warn">
 
-### ⚠️ Our Goal
+### ⚠️ Goal
 Clarify what a tracking app **could and could not** guarantee — regardless of its technical implementation
 
 </div>
 
----
+--- 
 
 # Summary of Claims vs. Reality
 
@@ -116,26 +130,34 @@ Clarify what a tracking app **could and could not** guarantee — regardless of 
 - Each phone **generates a random pseudonym** every ~5 minutes
 - Phones in proximity **exchange pseudonyms via Bluetooth** and record the time
 - Data stored locally for **14 days**
-- If Alice tests positive → app alerts all contacts (e.g. Bob) who received her pseudonyms
+- If **Alice tests positive** → app alerts all contacts (e.g. Bob) who received her pseudonyms
+
+![bg right:30% fit](assets/images/presentation-20260520-090728.png)
+
+---
+
+# How Bob is informed
 
 <div class="box">
 
-### :satellite: Two Models
-**Decentralised** (DP3T, Apple/Google): Alice's pseudonyms are published publicly; Bob checks locally.
-**Centralised** (ROBERT): Alice's contacts are sent to a server; Bob queries the server.
+### :gear: The Models
+
+- **Decentralised** (DP3T, Apple/Google): **Alice's pseudonyms are published publicly** (e.g. p2p, bullettin board); Bob checks locally.
+- **Centralised** (ROBERT): **Alice's contacts pseudonym (BoB included) are sent to a server**; The server informs BoB.
 
 </div>
 
-![bg right:30% fit](img/how-it-works.png)
+![bg right:30% fit](assets/images/presentation-20260520-090728.png)
+
+---
+
+![bg fit](assets/images/centrdecentr.jpg)
 
 ---
 
 # Data is NOT Anonymous
 
-- Records are **pseudonymised**, not anonymous — a critical distinction under the GDPR:
-
-> *"Personal data which have undergone pseudonymisation … should be considered to be information on an identifiable natural person."*
-> — GDPR
+- Records are **pseudonymised**, not anonymous — a critical distinction under the [GDPR(Article 4(5))](https://gdpr-info.eu/art-4-gdpr/):
 
 - De-anonymisation possible via: **Bluetooth antenna**, **IP address**, or **cross-referencing contacts**
 
@@ -159,7 +181,7 @@ Even without technical skills, users can infer identities:
 
 <div class="scenario">
 
-**Scenario: Information Crossing** — Mrs. Jones receives a notification and chats with neighbours and colleagues. She narrows the source to Mr. Attrisk on the 3rd floor and posts her suspicion on social networks.
+**Scenario: Information Crossing** — Mrs. Jones receives a notification and chats with neighbours (notif.) and colleagues ($\neg$ notif.). She narrows the source to Mr. Attrisk on the 3rd floor and posts her suspicion on social networks.
 
 </div>
 
@@ -167,7 +189,25 @@ Even without technical skills, users can infer identities:
 
 ---
 
-# Spying Within Everyone's Reach
+# How to Find Out Who Infected You
+
+Even without technical skills, users can infer identities:
+
+<div class="scenario">
+
+**Scenario: Are my neighbours sick?** — Mr. Hipokondriac would like to know if his
+neighbours are sick. He ﬁnds his old telephone in a cupboard, installs the TraceVIRUS
+app, and leaves it in his mailbox at the bottom of his building. All of the neighbours
+pass by each time they return home, and the phone will receive a notiﬁcation if one of
+them is sick.
+
+</div>
+
+> These scenarios require **no hacking skills** — only social deduction.
+
+---
+
+# How do you know if a speciﬁc person is sick?
 
 Any tracking system that notifies contacts **can be used to monitor a specific person**:
 
@@ -181,7 +221,8 @@ Any tracking system that notifies contacts **can be used to monitor a specific p
 
 </div>
 
-![bg right:30% fit](img/spy.png)
+![bg right:30% fit](assets/images/presentation-20260520-092259.png)
+
 
 ---
 
@@ -228,6 +269,15 @@ False alarms can **target individuals** (athletes, job candidates, negotiators) 
 
 ---
 
+# [WhisperPair](https://whisperpair.eu/)
+
+- **Bluetooth hijacking** Google Fast Pair not correctly implemented $\rightarrow$  attacker can forcefully pair with a vulnerable bluetooth accessory /record audio, pump up volume).
+- **Location tracking** Using Google's Find Hub Network
+
+![bg right:30% fit](assets/images/presentation-20260520-095443.png)
+
+---
+
 # Towards Large-Scale Snooping
 
 Even without official access, third parties can build shadow registries:
@@ -238,10 +288,22 @@ Even without official access, third parties can build shadow registries:
 
 <div class="warn">
 
-### :no_entry: Key Insight
+In Decentralised solution, ids are public $\leftarrow$ easier re-identification
+
+</div>
+
+---
+
+# Towards Large-Scale Snooping
+
+<div class="warn">
+
+### <i class="fa-regular fa-lightbulb"></i> Key Insight
 Most attacks exploit **features** of these systems, not bugs — they cannot be fixed by better cryptography alone.
 
 </div>
+
+
 
 ---
 
@@ -258,8 +320,20 @@ The benefits of digital tracing remain **highly uncertain**, while the privacy a
 
 </div>
 
+---
+
 > *"Information technology must be at the service of every citizen … it should infringe neither on human identity, nor on human rights, nor on privacy, nor individual or public freedoms."*
 > — French "Computing and Freedoms" Act, 1978
+
+---
+
+> "Asking people to choose between privacy and health is, in fact, the very root of the problem. Because this is a false choice. We can and should enjoy both privacy and health. We can choose to protect our health and stop the coronavirus epidemic not by instituting totalitarian surveillance regimes, but rather by empowering citizens." [<sub><sup>source</sup></sub>](https://www.ft.com/content/19d90308-6858-11ea-a3c9-1fe6fedcca75)
+
+![bg right:30% fit](assets/images/presentation-20260520-094104.png)
+
+---
+
+![bg](assets/images/common_people.jpg)
 
 ---
 
@@ -268,17 +342,3 @@ The benefits of digital tracing remain **highly uncertain**, while the privacy a
 - Should society deploy systems with **known, unavoidable privacy risks** for epidemiological benefits that remain uncertain?
 - Who bears responsibility when tracing is **misused by employers, insurers, or criminals**?
 - How do we balance **collective health protection** with **individual rights** in a surveillance-capable society?
-
----
-
-# References
-
-- R. Anderson — *Contact tracing in the real world* (2020)
-- S. Landau — *Looking beyond contact tracing to stop the spread* (2020)
-- B. Schneier — *Contact tracing COVID-19 infections via smartphone apps* (2020)
-- S. Vaudenay — *Analysis of DP3T*, Cryptology ePrint Archive (2020)
-- La Quadrature du Net — *Nos arguments pour rejeter StopCOVID* (2020)
-
-<i class="fa-solid fa-globe"></i> [https://risques-tracage.fr/](https://risques-tracage.fr/)
-
-![bg right:30% fit](img/qr.png)
