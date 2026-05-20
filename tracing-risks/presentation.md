@@ -142,7 +142,7 @@ Clarify what a tracking app **could and could not** guarantee — regardless of 
 
 ### :gear: The Models
 
-- **Decentralised** (DP3T, Apple/Google): **Alice's pseudonyms are published publicly** (e.g. p2p, bullettin board); Bob checks locally.
+- **Decentralised** (DP3T, Apple/Google): **Alice's pseudonyms are published publicly** (e.g. p2p, bulletin board); Bob checks locally.
 - **Centralised** (ROBERT): **Alice's contacts pseudonym (BoB included) are sent to a server**; The server informs BoB.
 
 </div>
@@ -272,7 +272,7 @@ False alarms can **target individuals** (athletes, job candidates, negotiators) 
 # [WhisperPair](https://whisperpair.eu/)
 
 - **Bluetooth hijacking** Google Fast Pair not correctly implemented $\rightarrow$  attacker can forcefully pair with a vulnerable bluetooth accessory /record audio, pump up volume).
-- **Location tracking** Using Google's Find Hub Network
+- **Location tracking** Using [Google's Find Hub Network](https://www.google.com/android/find/)
 
 ![bg right:30% fit](assets/images/presentation-20260520-095443.png)
 
@@ -322,11 +322,6 @@ The benefits of digital tracing remain **highly uncertain**, while the privacy a
 
 ---
 
-> *"Information technology must be at the service of every citizen … it should infringe neither on human identity, nor on human rights, nor on privacy, nor individual or public freedoms."*
-> — French "Computing and Freedoms" Act, 1978
-
----
-
 > "Asking people to choose between privacy and health is, in fact, the very root of the problem. Because this is a false choice. We can and should enjoy both privacy and health. We can choose to protect our health and stop the coronavirus epidemic not by instituting totalitarian surveillance regimes, but rather by empowering citizens." [<sub><sup>source</sup></sub>](https://www.ft.com/content/19d90308-6858-11ea-a3c9-1fe6fedcca75)
 
 ![bg right:30% fit](assets/images/presentation-20260520-094104.png)
@@ -342,3 +337,4 @@ The benefits of digital tracing remain **highly uncertain**, while the privacy a
 - Should society deploy systems with **known, unavoidable privacy risks** for epidemiological benefits that remain uncertain?
 - Who bears responsibility when tracing is **misused by employers, insurers, or criminals**?
 - How do we balance **collective health protection** with **individual rights** in a surveillance-capable society?
+- [https://commission.europa.eu/documents_en](https://commission.europa.eu/documents_en) search for **covid-19 apps**
