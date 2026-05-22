@@ -166,7 +166,7 @@ The posterior probability of a set of weights $\mathbf{w}$ given the observed fe
 $$p(\mathbf{w} \mid y) \propto p(y \mid \mathbf{w}) \cdot p(\mathbf{w})$$
 
 - $p(y \mid \mathbf{w})$ is the Likelihood: How well do the weights explain the raw sensor data?
-- $p(\mathbf{w})$ is the Weight Prior: This is what you rightly pointed out is hard to define intuitively.
+- $p(\mathbf{w})$ is the Weight Prior
 
 If a randomly proposed step in the weights ($\mathbf{w}^*$) causes the network to output an impossible value for $D$, $\mu$, or $\lambda$, the mathematical probability of that weight configuration is zero. Therefore, the biological output limits act as a filter that shapes the allowed weight space.
 
