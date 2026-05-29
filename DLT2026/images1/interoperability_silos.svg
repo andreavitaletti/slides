@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 300" width="700" height="300">
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.1"/>
+    </filter>
+  </defs>
+
+  <text x="350" y="30" text-anchor="middle" font-family="Arial" font-size="18" font-weight="bold" fill="#2c3e50">The Fragmentation of Ledger Silos</text>
+  <text x="350" y="48" text-anchor="middle" font-family="Arial" font-size="12" fill="#7f8c8d">Incompatible Networks &amp; Divided Governance</text>
+
+  <!-- Silo 1: Automotive -->
+  <rect x="30" y="70" width="180" height="130" rx="8" fill="#e8ecf1" stroke="#34495e" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="120" y="95" text-anchor="middle" font-family="Arial" font-size="12" font-weight="bold" fill="#2c3e50">Auto Consortium</text>
+  <text x="120" y="112" text-anchor="middle" font-family="Arial" font-size="10" fill="#7f8c8d">Hyperledger Fabric</text>
+  <line x1="50" y1="122" x2="190" y2="122" stroke="#bdc3c7" stroke-width="1"/>
+  <text x="50" y="142" font-family="Arial" font-size="10" fill="#34495e">• Private / Permissioned</text>
+  <text x="50" y="157" font-family="Arial" font-size="10" fill="#34495e">• Custom GS1 Schemas</text>
+  <text x="50" y="172" font-family="Arial" font-size="10" fill="#34495e">• Secret Validator Set</text>
+
+  <!-- Silo 2: Electronics -->
+  <rect x="260" y="70" width="180" height="130" rx="8" fill="#e8ecf1" stroke="#34495e" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="350" y="95" text-anchor="middle" font-family="Arial" font-size="12" font-weight="bold" fill="#2c3e50">Battery Consortium</text>
+  <text x="350" y="112" text-anchor="middle" font-family="Arial" font-size="10" fill="#7f8c8d">R3 Corda</text>
+  <line x1="280" y1="122" x2="420" y2="122" stroke="#bdc3c7" stroke-width="1"/>
+  <text x="280" y="142" font-family="Arial" font-size="10" fill="#34495e">• Point-to-point state sharing</text>
+  <text x="280" y="157" font-family="Arial" font-size="10" fill="#34495e">• Proprietary Corda data</text>
+  <text x="280" y="172" font-family="Arial" font-size="10" fill="#34495e">• Isolated from public web</text>
+
+  <!-- Silo 3: Apparel/Luxury -->
+  <rect x="490" y="70" width="180" height="130" rx="8" fill="#e8ecf1" stroke="#34495e" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="580" y="95" text-anchor="middle" font-family="Arial" font-size="12" font-weight="bold" fill="#2c3e50">Luxury Aura Consortium</text>
+  <text x="580" y="112" text-anchor="middle" font-family="Arial" font-size="10" fill="#7f8c8d">Quorum (Ethereum)</text>
+  <line x1="510" y1="122" x2="650" y2="122" stroke="#bdc3c7" stroke-width="1"/>
+  <text x="510" y="142" font-family="Arial" font-size="10" fill="#34495e">• Private EVM Network</text>
+  <text x="510" y="157" font-family="Arial" font-size="10" fill="#34495e">• Custom ERC-721 tokens</text>
+  <text x="510" y="172" font-family="Arial" font-size="10" fill="#34495e">• No cross-EVM standards</text>
+
+  <!-- Broken Links -->
+  <path d="M 215 130 L 255 130" stroke="#e74c3c" stroke-width="2" stroke-dasharray="4,4"/>
+  <text x="235" y="125" text-anchor="middle" font-family="Arial" font-size="12" font-weight="bold" fill="#e74c3c">?</text>
+
+  <path d="M 445 130 L 485 130" stroke="#e74c3c" stroke-width="2" stroke-dasharray="4,4"/>
+  <text x="465" y="125" text-anchor="middle" font-family="Arial" font-size="12" font-weight="bold" fill="#e74c3c">?</text>
+
+  <!-- Unified Recycler at bottom -->
+  <rect x="210" y="235" width="280" height="50" rx="6" fill="#fdf2f2" stroke="#e74c3c" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="350" y="255" text-anchor="middle" font-family="Arial" font-size="11" font-weight="bold" fill="#78281f">Recycler trying to read complex multi-material product</text>
+  <text x="350" y="270" text-anchor="middle" font-family="Arial" font-size="9" fill="#922b21">Must integrate 3 proprietary, mutually incompatible API &amp; ledger stacks</text>
+</svg>
