@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 310" width="700" height="310">
+  <text x="350" y="30" text-anchor="middle" font-family="Arial" font-size="17" font-weight="bold" fill="#2c3e50">Security Properties of ASAI</text>
+
+  <!-- 6 property boxes in 2 rows of 3 -->
+  <!-- Row 1 -->
+  <rect x="20" y="50" width="205" height="100" rx="8" fill="#3498db" opacity="0.13" stroke="#3498db" stroke-width="2"/>
+  <text x="122" y="72" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="#1f38c5">🔒 Model Privacy</text>
+  <text x="122" y="92" text-anchor="middle" font-family="Arial" font-size="11" fill="#555">Weights, architecture &amp;</text>
+  <text x="122" y="108" text-anchor="middle" font-family="Arial" font-size="11" fill="#555">activations never disclosed.</text>
+  <text x="122" y="126" text-anchor="middle" font-family="Arial" font-size="11" fill="#555">2PC security guarantees this.</text>
+
+  <rect x="245" y="50" width="205" height="100" rx="8" fill="#8e44ad" opacity="0.13" stroke="#8e44ad" stroke-width="2"/>
+  <text x="347" y="72" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="#8e44ad">🙈 Output Privacy</text>
+  <text x="347" y="92" text-anchor="middle" font-family="Arial" font-size="11" fill="#555">Client learns only bit b</text>
+  <text x="347" y="108" text-anchor="middle" font-family="Arial" font-size="11" fill="#555">before payment. No free</text>
+  <text x="347" y="126" text-anchor="middle" font-family="Arial" font-size="11" fill="#555">answer extraction.</text>
+
+  <rect x="470" y="50" width="210" height="100" rx="8" fill="#e67e22" opacity="0.13" stroke="#e67e22" stroke-width="2"/>
+  <text x="575" y="72" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="#e67e22">📋 Benchmark Privacy</text>
+  <text x="575" y="92" text-anchor="middle" font-family="Arial" font-size="11" fill="#555">Server learns only bit b.</text>
+  <text x="575" y="108" text-anchor="middle" font-family="Arial" font-size="11" fill="#555">B and τ stay hidden via</text>
+  <text x="575" y="126" text-anchor="middle" font-family="Arial" font-size="11" fill="#555">commitments + ZK.</text>
+
+  <!-- Row 2 -->
+  <rect x="20" y="165" width="205" height="100" rx="8" fill="#27ae60" opacity="0.13" stroke="#27ae60" stroke-width="2"/>
+  <text x="122" y="187" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="#27ae60">🔗 Query Binding</text>
+  <text x="122" y="207" text-anchor="middle" font-family="Arial" font-size="11" fill="#555">Client can't inject queries</text>
+  <text x="122" y="223" text-anchor="middle" font-family="Arial" font-size="11" fill="#555">outside committed set.</text>
+  <text x="122" y="241" text-anchor="middle" font-family="Arial" font-size="11" fill="#555">Merkle binding enforces.</text>
+
+  <rect x="245" y="165" width="205" height="100" rx="8" fill="#e74c3c" opacity="0.13" stroke="#e74c3c" stroke-width="2"/>
+  <text x="347" y="187" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="#c0392b">✍️ Non-Repudiation</text>
+  <text x="347" y="207" text-anchor="middle" font-family="Arial" font-size="11" fill="#555">Server signs every answer.</text>
+  <text x="347" y="223" text-anchor="middle" font-family="Arial" font-size="11" fill="#555">Cannot deny outputs used</text>
+  <text x="347" y="241" text-anchor="middle" font-family="Arial" font-size="11" fill="#555">in a complaint.</text>
+
+  <rect x="470" y="165" width="210" height="100" rx="8" fill="#c0392b" opacity="0.13" stroke="#c0392b" stroke-width="2"/>
+  <text x="575" y="187" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="#c0392b">📊 Accountability</text>
+  <text x="575" y="207" text-anchor="middle" font-family="Arial" font-size="11" fill="#555">Degradation detected with</text>
+  <text x="575" y="223" text-anchor="middle" font-family="Arial" font-size="11" fill="#555">prob. ≥ 1 − 2⁻¹²⁸</text>
+  <text x="575" y="241" text-anchor="middle" font-family="Arial" font-size="11" fill="#555">(N=5000, ε'=0.1)</text>
+</svg>

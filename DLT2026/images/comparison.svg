@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 710 300" width="710" height="300">
+  <text x="355" y="28" text-anchor="middle" font-family="Arial" font-size="17" font-weight="bold" fill="#2c3e50">Comparison with Related Work</text>
+
+  <!-- Header row -->
+  <rect x="10" y="42" width="690" height="30" rx="4" fill="#1f38c5"/>
+  <text x="100" y="62" text-anchor="middle" font-family="Arial" font-size="12" font-weight="bold" fill="white">Approach</text>
+  <text x="270" y="62" text-anchor="middle" font-family="Arial" font-size="12" font-weight="bold" fill="white">Technique</text>
+  <text x="430" y="62" text-anchor="middle" font-family="Arial" font-size="12" font-weight="bold" fill="white">Model Privacy</text>
+  <text x="570" y="62" text-anchor="middle" font-family="Arial" font-size="12" font-weight="bold" fill="white">Proving Cost</text>
+  <text x="670" y="62" text-anchor="middle" font-family="Arial" font-size="12" font-weight="bold" fill="white">Goal</text>
+
+  <!-- Rows -->
+  <!-- zkCNN / zkLLM / zkGPT -->
+  <rect x="10" y="74" width="690" height="36" rx="0" fill="#f8f9fa"/>
+  <text x="100" y="95" text-anchor="middle" font-family="Arial" font-size="11" fill="#333">zkCNN, zkLLM, zkGPT</text>
+  <text x="270" y="95" text-anchor="middle" font-family="Arial" font-size="11" fill="#333">Full ZK-SNARK per inference</text>
+  <text x="430" y="88" text-anchor="middle" font-family="Arial" font-size="11" fill="#27ae60">✔ Weights hidden</text>
+  <text x="430" y="104" text-anchor="middle" font-family="Arial" font-size="11" fill="#e74c3c">✘ Circuit = full model</text>
+  <text x="570" y="95" text-anchor="middle" font-family="Arial" font-size="11" fill="#e74c3c">Minutes / inference (GPU)</text>
+  <text x="668" y="95" text-anchor="middle" font-family="Arial" font-size="10" fill="#555">Verify outputs</text>
+
+  <!-- opML -->
+  <rect x="10" y="112" width="690" height="36" rx="0" fill="#fff"/>
+  <text x="100" y="133" text-anchor="middle" font-family="Arial" font-size="11" fill="#333">opML</text>
+  <text x="270" y="133" text-anchor="middle" font-family="Arial" font-size="11" fill="#333">Optimistic fraud proofs</text>
+  <text x="430" y="126" text-anchor="middle" font-family="Arial" font-size="11" fill="#e67e22">~ Partial</text>
+  <text x="430" y="142" text-anchor="middle" font-family="Arial" font-size="11" fill="#333"></text>
+  <text x="570" y="133" text-anchor="middle" font-family="Arial" font-size="11" fill="#27ae60">Low (dispute only)</text>
+  <text x="668" y="133" text-anchor="middle" font-family="Arial" font-size="10" fill="#555">On-chain ML</text>
+
+  <!-- Lightweight proofs (ACC+26) -->
+  <rect x="10" y="150" width="690" height="36" rx="0" fill="#f8f9fa"/>
+  <text x="100" y="171" text-anchor="middle" font-family="Arial" font-size="11" fill="#333">Lightweight ZK (ACC+26)</text>
+  <text x="270" y="171" text-anchor="middle" font-family="Arial" font-size="11" fill="#333">Sampled Merkle paths</text>
+  <text x="430" y="164" text-anchor="middle" font-family="Arial" font-size="11" fill="#27ae60">✔</text>
+  <text x="430" y="180" text-anchor="middle" font-family="Arial" font-size="11" fill="#e67e22">Weaker soundness</text>
+  <text x="570" y="171" text-anchor="middle" font-family="Arial" font-size="11" fill="#27ae60">Milliseconds</text>
+  <text x="668" y="171" text-anchor="middle" font-family="Arial" font-size="10" fill="#555">Verify outputs</text>
+
+  <!-- PrivaDE -->
+  <rect x="10" y="188" width="690" height="36" rx="0" fill="#fff"/>
+  <text x="100" y="209" text-anchor="middle" font-family="Arial" font-size="11" fill="#333">PrivaDE (WTCS26)</text>
+  <text x="270" y="209" text-anchor="middle" font-family="Arial" font-size="11" fill="#333">2PC + ZK + blockchain</text>
+  <text x="430" y="209" text-anchor="middle" font-family="Arial" font-size="11" fill="#27ae60">✔ (data, not model)</text>
+  <text x="570" y="209" text-anchor="middle" font-family="Arial" font-size="11" fill="#e67e22">Moderate</text>
+  <text x="668" y="209" text-anchor="middle" font-family="Arial" font-size="10" fill="#555">Data markets</text>
+
+  <!-- ASAI (ours) -->
+  <rect x="10" y="226" width="690" height="40" rx="4" fill="#1f38c5" opacity="0.12" stroke="#1f38c5" stroke-width="2"/>
+  <text x="100" y="249" text-anchor="middle" font-family="Arial" font-size="12" font-weight="bold" fill="#1f38c5">ASAI (ours)</text>
+  <text x="270" y="242" text-anchor="middle" font-family="Arial" font-size="11" fill="#333">2PC + Merkle + ZK-SNARK</text>
+  <text x="270" y="258" text-anchor="middle" font-family="Arial" font-size="11" fill="#333">+ Smart Contract</text>
+  <text x="430" y="249" text-anchor="middle" font-family="Arial" font-size="11" fill="#27ae60">✔ Full (no weights/arch)</text>
+  <text x="570" y="249" text-anchor="middle" font-family="Arial" font-size="11" fill="#27ae60">~7.7 min (complaint only)</text>
+  <text x="668" y="242" text-anchor="middle" font-family="Arial" font-size="10" font-weight="bold" fill="#1f38c5">AI service</text>
+  <text x="668" y="258" text-anchor="middle" font-family="Arial" font-size="10" font-weight="bold" fill="#1f38c5">accountability</text>
+
+  <!-- Grid lines -->
+  <line x1="10" y1="112" x2="700" y2="112" stroke="#ddd" stroke-width="1"/>
+  <line x1="10" y1="150" x2="700" y2="150" stroke="#ddd" stroke-width="1"/>
+  <line x1="10" y1="188" x2="700" y2="188" stroke="#ddd" stroke-width="1"/>
+  <line x1="10" y1="226" x2="700" y2="226" stroke="#ddd" stroke-width="1"/>
+  <!-- Column separators -->
+  <line x1="175" y1="42" x2="175" y2="266" stroke="#ddd" stroke-width="1"/>
+  <line x1="355" y1="42" x2="355" y2="266" stroke="#ddd" stroke-width="1"/>
+  <line x1="510" y1="42" x2="510" y2="266" stroke="#ddd" stroke-width="1"/>
+  <line x1="630" y1="42" x2="630" y2="266" stroke="#ddd" stroke-width="1"/>
+</svg>
