@@ -3,7 +3,7 @@ marp: true
 theme: beam
 paginate: true
 header: "Blockchain & The Digital Product Passport (DPP)"
-footer: "Critical Perspective & Open Issues | DLT Course 2026"
+footer: "DLT 2026"
 style: |
   @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css');
   section {
@@ -68,50 +68,92 @@ style: |
   .source a { color: #333; text-decoration: none; }
 ---
 
-# Blockchain & The Digital Product Passport (DPP)
+# Digital Product Passport
 
-### A Critical Examination of Technical Bottlenecks, Trust Assumptions, and Governance Silos
+### A no-nonsense discussion on the blockchain-based perspectives
 
-**Andrea Vitaletti**
-*Sapienza University of Rome*
+Ilaria Lunesu; Lodovica Marchesi; Andrea Pinna; Roberto Tonelli; **Andrea Vitaletti**
+
 
 ---
 
-# The Digital Product Passport (DPP) Mandate
+<div class="box-red">
 
-- **EU Ecodesign for Sustainable Products Regulation (ESPR)**
-  - Requires a "Digital Twin" for batteries, electronics, textiles, and building materials
-  - Mandates transparency on material composition, origin, recycling, and carbon footprint
+### :warning: More questions than answers
 
-![bg right:55% fit](images1/dpp_concept.svg)
-
-<div class="box">
-
-### :link: The Blockchain Hypothesis
-
-Proponents claim blockchain is the *only* solution to:
-1. Ensure **immutable** historical tracking across a fragmented, global supply chain.
-2. Establish a **decentralized** trust layer where no single firm or nation controls the data.
-3. Automatically execute compliance rules via **smart contracts**.
+... and this is only a limited number of relevant questions!
 
 </div>
 
 ---
 
-# The Promise vs. The Reality
+<style scoped>
+h1 {
+    text-align: center;
+    position: absolute;
+    top: 10%;
+    left: 0;
+    right: 0;
+}
+</style>
 
-![bg left:55% fit](images1/promise_vs_reality.svg)
+# Ecodesign for Sustainable Products Regulation (ESPR)
 
-- **The Theory:**
-  - Standardized, frictionless, incorruptible decentralized ledger tracking circular lifecycle.
+![bg 80% fit](images1/ESPR.png)
 
-- **The Reality:**
-  - High costs, low performance, fragmentation into industry silos, privacy breaches, and zero physical security.
+--- 
+
+# Digital Product Passport
+
+ > It is a comprehensive standard (e.g. [GS1 Arch](https://gs1.eu/wp-content/uploads/2022/08/Digital_Product_Passport_Architecture_GS1inEurope_March_2022.pdf), [GS1 GSCN](https://ref.gs1.org/standards/genspecs/gscn/2023/Provisional-GSCN-23-103-DP.pdf)) digital record that tracks a product’s lifecycle, materials, origin, and environmental footprint to promote a circular, sustainable economy.
+
+
+---
+
+<style scoped>
+h1 {
+    text-align: center;
+    position: absolute;
+    top: 10%;
+    left: 0;
+    right: 0;
+}
+</style>
+
+# DPP Roadmap
+
+![bg 80% fit](images1/timeline.jpg)
+
+--- 
+
+# The opportunity
+
+| Target Industry / Milestone | Key Timeline & Focus |
+| :--- | :--- |
+| **Batteries** | Operational starting February 2027 for industrial and EV batteries under separate battery rules. |
+| **Priority Sectors** | First wave includes Iron, Steel, Textiles, Apparel, Aluminium, and Furniture (Adoptions spanning 2026–2028). |
+| **Secondary Wave** | Expected rollout for Tyres, Mattresses, and Electronics by 2027–2029. |
+| **Universal Mandate** | By 2030, the DPP framework is expected to cover nearly all regulated consumer and industrial goods. |
+
+---
+
+# :link: The Blockchain Hypothesis
+
+Proponents claim blockchain is the *only* solution to:
+1. Ensure **immutable** historical tracking across a fragmented, global supply chain: changing one entry means breaking the entire chain
+2. Establish a **decentralized** trust layer where no single firm or nation controls the data: DPP  accessible throughout the product's life (tens of years). No company can guarantee its own database will survive that long.
+3. Automatically execute compliance rules via **smart contracts**.
+
+
+---
+
 
 <div class="box-red">
 
-### :warning: The Fundamental Flaw
-Blockchains do not secure **facts**; they only secure **records**. If the input data is forged, the blockchain simply records a lie in an immutable, permanent way.
+### :warning: Memento
+
+Blockchain ensures data **integrity**, not data **quality**
+If the input data is forged, the blockchain simply records a lie in an immutable, permanent way.
 
 </div>
 
@@ -119,16 +161,18 @@ Blockchains do not secure **facts**; they only secure **records**. If the input 
 
 # Issue #1: The Physical-Digital Linkage Problem
 
+- **Vulnerabilities of Physical Tags: e.g. QR Code Copying / destruction**
 - **The "Garbage In, Garbage Out" (GIGO) Dilemma**
   - Ledgers are digital, products are physical.
   - Cryptographic signatures guarantee *who* wrote the data, not that the *physical reality* matches the entry.
 
-![bg right:55% fit](images1/physical_digital_link.svg)
+<div class="box-red">
 
-- **Vulnerabilities of Physical Tags:**
-  - **QR Code Copying:** Anyone can photocopy a genuine QR code and paste it on ten low-grade counterfeits.
-  - **NFC/RFID Swapping:** Peeling an authentic tag from a degraded battery to bypass circular audits on a new sub-standard batch.
-  - **Destruction & Wear:** Tags get damaged in active environments, breaking the passport link entirely.
+### True in all digital solutions
+
+</div>
+
+
 
 ---
 
@@ -136,10 +180,6 @@ Blockchains do not secure **facts**; they only secure **records**. If the input 
 
 - **The Transparency Paradox**
   - Regulators/consumers demand complete transparency of supply chains.
-  - BUT: A product's **Bill of Materials (BOM)** and supplier registry are **critical trade secrets**.
-
-![bg left:52% fit](images1/confidentiality_tension.svg)
-
 - **Commercial Threats:**
   - Competitors can reverse-engineer manufacturing processes from material weights and locations.
   - Public shipping transaction logs reveal supplier pricing, production volumes, and margins.
@@ -156,12 +196,9 @@ Using **Zero-Knowledge Proofs (ZKPs)** to hide data while proving compliance is 
 # Issue #3: Scalability, Latency, and Financial Costs
 
 - **Transaction Volumes & Network Capacity**
-  - EU markets process **billions** of new physical items each year.
-  - Tracking every transit, repair, component swap, and recycling event demands high-throughput.
-
-- **The Trilemma Constraint:**
-  - **Public Blockchains (e.g., Ethereum L1/L2):** Fees are unpredictable and prohibitively high (e.g., $0.05 to $2.00 per update). Who pays to register a €3 garment's passport?
-  - **Private Consortiums:** High throughput and low fees, but they are just centralized databases managed by a cartel of large corporations.
+  - EU markets process **billions** of new physical items each year: tracking every transit, repair, component swap, and recycling event demands high-throughput.
+  - **Public Blockchains (e.g., Ethereum L1/L2):** Fees are unpredictable and prohibitively high especially for low cost items
+  - **Private Consortiums:** High throughput and low fees, but are they just centralized databases managed by a cartel of large corporations?
 
 <div class="box">
 
@@ -178,8 +215,6 @@ If the cost of maintaining the digital history exceeds the residual value of the
   - There will never be a single, global "DPP Blockchain".
   - Automotive (Catena-X), Luxury (Aura), and Tech (Battery Alliance) run separate, incompatible networks.
 
-![bg right:55% fit](images1/interoperability_silos.svg)
-
 - **Interoperability Failures:**
   - Cross-chain bridging is highly insecure and prone to hacks.
   - Recyclers handling complex e-waste must integrate with dozens of different ledger networks and data schemas.
@@ -191,68 +226,50 @@ If the cost of maintaining the digital history exceeds the residual value of the
 
 # Issue #5: GDPR vs. Blockchain Immutability
 
-- **The Irreconcilable Clash of Law and Architecture**
-  - **GDPR Article 17:** The "Right to be Forgotten" mandates the erasure of personal data on request.
-  - **Blockchain Core Feature:** Permanent, non-deletable history.
-
+- **GDPR Article 17:** The "Right to be Forgotten" mandates the erasure of personal data on request. Also right to rectification (Article 16).
+  - Who is the data controller?
+  - International data transfer
+  - National authorities like France's CNIL have long warned that hashes and public keys often remain personal data
+ 
 - **How Personal Data Leaks Into the Passport:**
   - Ownership transfers of premium goods (e.g., e-bikes, luxury watches) identify buyers.
   - Repair and maintenance logs contain the names, licenses, and locations of technicians.
 
-<div class="box-red">
+---
 
-### :scissors: The Failure of "Off-Chain Hashing"
-If we store data off-chain and only keep hashes on-chain, deleting the off-chain data to comply with GDPR leaves broken hashes on-chain, permanently destroying the ledger's semantic integrity.
+# European Data Protection Board ([EDPB's 2025 guidelines](https://www.edpb.europa.eu/system/files/2025-04/edpb_guidelines_202502_blockchain_en.pdf)) 
 
-</div>
+
+
+![bg right:55% fit](images1/DPP-20260603-145853.png)
 
 ---
 
-# Alternative Architecture: Do We Need a Blockchain?
+# DPP as a Collection of DIDs + VCs [[Garcia et al. 2024](https://arxiv.org/abs/2410.15758)]
 
-- **W3C Standards: DIDs & Verifiable Credentials (VCs)**
-  - A secure, standard, federated approach that requires **no** global transaction consensus ledger.
-
-![bg left:55% fit](images1/alternatives_did_vc.svg)
-
-- **How it works:**
-  - **Issuer:** Manufacturer signs the passport payload (JSON-LD) using a private key.
-  - **Holder:** The product (or its digital wallet) stores the signed VC off-chain.
-  - **Verifier:** Recycler verifies the cryptographic signature peer-to-peer.
-  - **Decentralized PKI:** Blockchain is used ONLY as a directory for public keys (DID Documents).
-
-<div class="box-green">
-
-### :shield: Benefits of DID/VC over Direct Blockchain Storage
-- **Zero transaction fees** for supply chain updates.
-- **Perfect privacy** (data is exchanged peer-to-peer, not publicly broadcast).
-- **Infinite scalability** (standard web protocols).
-
-</div>
-
----
-
-# Discussion Prompts for the Audience
-
-- **1. The Liability of the GIGO Link:**
-  - *Scenario:* A recycler relies on an immutable battery passport stating a battery has 80% cobalt. In reality, it was swapped with a counterfeit lead-acid tag and explodes. Who is legally liable: the manufacturer, the ledger validators, or the recycler?
-
-- **2. The Threat of Consortium Metadata:**
-  - *Scenario:* Five major car manufacturers operate a permissioned consortium blockchain for automotive passports. Can they analyze the metadata (transaction frequencies, shipping latency) of independent suppliers to force price reductions or squeeze out smaller competitors?
-
-- **3. The Carbon Paradox:**
-  - *Scenario:* A digital passport tracks a circular t-shirt. Recording raw materials, dyeing, sewing, shipping, and second-hand sales takes 5 blockchain transactions. Does the energy footprint of validating these transactions exceed the carbon offset of recycling the t-shirt?
+- DIDs → provide globally unique, resolvable identifiers for products and actors
+- VCs → encode certified claims about the product with cryptographic provenance
+- Blockchain → anchors DID documents and VC schemas (immutability, auditability)
+- Off-chain storage → holds the actual VC payloads (GDPR compliance, data minimization)
+- With DIDs, VCs and Verifiable Presentations VPs, persons and companies may easily control which of their own information is presented to others and when and how this is done
+- This maps very naturally onto ESPR's requirements.
 
 ---
 
 # Paradigm Comparison
 
+<style scoped>
+table {
+  font-size: 70%;
+}
+</style>
+
 | Criteria | Centralized Database (EU Registry) | Consortium Blockchain | Public Blockchain (L2) | DIDs + VCs (Decentralized PKI) |
 | :--- | :---: | :---: | :---: | :---: |
-| **Trust Model** | Trust in government | Trust in industry cartel | Math + Miner/Validator set | Cryptographic peer-to-peer |
-| **Data Privacy** | High (controlled access) | Medium (leaks to rivals) | Extremely low (public) | **Excellent (off-chain)** |
-| **Write Cost** | Negligible | Low | High &amp; Unstable | **Zero** |
-| **Scalability** | High | Medium | Low | **Infinite** |
+| **Trust Model** | Trust in government | Trust in "industry" cartel (IBSI/EBSI) | Math + Miner/Validator set | Cryptographic peer-to-peer |
+| **Data Privacy** | High (controlled access) | Medium (leaks to rivals) | Extremely low (public) | Excellent (off-chain) |
+| **Write Cost** | Negligible | Low | High &amp; Unstable | Zero |
+| **Scalability** | High | Medium | Low | High |
 | **GIGO Security** | Checked at input | Checked by consortium | Unchecked | Checked by peer-to-peer audit |
 
 ---
@@ -261,9 +278,6 @@ If we store data off-chain and only keep hashes on-chain, deleting the off-chain
 
 ### Let's Open the Critical Discussion
 
-- Is the blockchain hype in circular economy projects just a distraction from standardizing data formats?
-- How can we solve the physical-digital linkage without expensive tamper-proof hardware?
-- Can circular regulations survive without a centralized state enforcement agency?
 
 <i class="fa-solid fa-at"></i> vitaletti@diag.uniroma1.it
 <i class="fa-solid fa-globe"></i> [https://www.diag.uniroma1.it/vitaletti/](https://www.diag.uniroma1.it/vitaletti/)

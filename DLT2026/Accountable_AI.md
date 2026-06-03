@@ -3,7 +3,7 @@ marp: true
 theme: beam
 paginate: true
 header: "Accountable AI Inference Services"
-footer: "Workshop on Trustworthy AI Systems"
+footer: "DLT 2026"
 style: |
   @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css');
   section {
@@ -68,11 +68,9 @@ style: |
   .source a { color: #333; text-decoration: none; }
 ---
 
-# Accountable AI Inference Services via Smart Contracts
+# Secure and Private Benchmarking for Subscription-Based AI Inference Services
 
-### Enforcing Pre- and Post-Purchase Quality Guarantees for AI Models
-
-**Vincenzo Botta, Ivan Visconti, Andrea Vitaletti, Marco Zecchini**
+Vincenzo Botta, Ivan Visconti, **Andrea Vitaletti**, Marco Zecchini
 *Sapienza University of Rome*
 
 ---
