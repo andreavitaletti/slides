@@ -1,42 +1,301 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 310" width="700" height="310">
-  <text x="350" y="30" text-anchor="middle" font-family="Arial" font-size="17" font-weight="bold" fill="#2c3e50">Security Properties of ASAI</text>
-
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 700 310"
+   width="700"
+   height="310"
+   version="1.1"
+   id="svg25"
+   sodipodi:docname="security_properties.svg"
+   inkscape:version="1.4 (e7c3feb100, 2024-10-09)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs25" />
+  <sodipodi:namedview
+     id="namedview25"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="1.2214286"
+     inkscape:cx="350"
+     inkscape:cy="154.73684"
+     inkscape:window-width="1536"
+     inkscape:window-height="795"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg25" />
   <!-- 6 property boxes in 2 rows of 3 -->
   <!-- Row 1 -->
-  <rect x="20" y="50" width="205" height="100" rx="8" fill="#3498db" opacity="0.13" stroke="#3498db" stroke-width="2"/>
-  <text x="122" y="72" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="#1f38c5">🔒 Model Privacy</text>
-  <text x="122" y="92" text-anchor="middle" font-family="Arial" font-size="11" fill="#555">Weights, architecture &amp;</text>
-  <text x="122" y="108" text-anchor="middle" font-family="Arial" font-size="11" fill="#555">activations never disclosed.</text>
-  <text x="122" y="126" text-anchor="middle" font-family="Arial" font-size="11" fill="#555">2PC security guarantees this.</text>
-
-  <rect x="245" y="50" width="205" height="100" rx="8" fill="#8e44ad" opacity="0.13" stroke="#8e44ad" stroke-width="2"/>
-  <text x="347" y="72" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="#8e44ad">🙈 Output Privacy</text>
-  <text x="347" y="92" text-anchor="middle" font-family="Arial" font-size="11" fill="#555">Client learns only bit b</text>
-  <text x="347" y="108" text-anchor="middle" font-family="Arial" font-size="11" fill="#555">before payment. No free</text>
-  <text x="347" y="126" text-anchor="middle" font-family="Arial" font-size="11" fill="#555">answer extraction.</text>
-
-  <rect x="470" y="50" width="210" height="100" rx="8" fill="#e67e22" opacity="0.13" stroke="#e67e22" stroke-width="2"/>
-  <text x="575" y="72" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="#e67e22">📋 Benchmark Privacy</text>
-  <text x="575" y="92" text-anchor="middle" font-family="Arial" font-size="11" fill="#555">Server learns only bit b.</text>
-  <text x="575" y="108" text-anchor="middle" font-family="Arial" font-size="11" fill="#555">B and τ stay hidden via</text>
-  <text x="575" y="126" text-anchor="middle" font-family="Arial" font-size="11" fill="#555">commitments + ZK.</text>
-
+  <rect
+     x="20"
+     y="50"
+     width="205"
+     height="100"
+     rx="8"
+     fill="#3498db"
+     opacity="0.13"
+     stroke="#3498db"
+     stroke-width="2"
+     id="rect1" />
+  <text
+     x="122"
+     y="72"
+     text-anchor="middle"
+     font-family="Arial"
+     font-size="13"
+     font-weight="bold"
+     fill="#1f38c5"
+     id="text2">🔒 Model Privacy</text>
+  <text
+     x="122"
+     y="92"
+     text-anchor="middle"
+     font-family="Arial"
+     font-size="11"
+     fill="#555"
+     id="text3">Weights, architecture &amp;</text>
+  <text
+     x="122"
+     y="108"
+     text-anchor="middle"
+     font-family="Arial"
+     font-size="11"
+     fill="#555"
+     id="text4">activations never disclosed.</text>
+  <text
+     x="122"
+     y="126"
+     text-anchor="middle"
+     font-family="Arial"
+     font-size="11"
+     fill="#555"
+     id="text5">2PC security guarantees this.</text>
+  <rect
+     x="245"
+     y="50"
+     width="205"
+     height="100"
+     rx="8"
+     fill="#8e44ad"
+     opacity="0.13"
+     stroke="#8e44ad"
+     stroke-width="2"
+     id="rect5" />
+  <text
+     x="347"
+     y="72"
+     text-anchor="middle"
+     font-family="Arial"
+     font-size="13"
+     font-weight="bold"
+     fill="#8e44ad"
+     id="text6">🙈 Output Privacy</text>
+  <text
+     x="347"
+     y="92"
+     text-anchor="middle"
+     font-family="Arial"
+     font-size="11"
+     fill="#555"
+     id="text7">Client learns only bit b</text>
+  <text
+     x="347"
+     y="108"
+     text-anchor="middle"
+     font-family="Arial"
+     font-size="11"
+     fill="#555"
+     id="text8">before payment. No free</text>
+  <text
+     x="347"
+     y="126"
+     text-anchor="middle"
+     font-family="Arial"
+     font-size="11"
+     fill="#555"
+     id="text9">answer extraction.</text>
+  <rect
+     x="470"
+     y="50"
+     width="210"
+     height="100"
+     rx="8"
+     fill="#e67e22"
+     opacity="0.13"
+     stroke="#e67e22"
+     stroke-width="2"
+     id="rect9" />
+  <text
+     x="575"
+     y="72"
+     text-anchor="middle"
+     font-family="Arial"
+     font-size="13"
+     font-weight="bold"
+     fill="#e67e22"
+     id="text10">📋 Benchmark Privacy</text>
+  <text
+     x="575"
+     y="92"
+     text-anchor="middle"
+     font-family="Arial"
+     font-size="11"
+     fill="#555"
+     id="text11">Server learns only bit b.</text>
+  <text
+     x="575"
+     y="108"
+     text-anchor="middle"
+     font-family="Arial"
+     font-size="11"
+     fill="#555"
+     id="text12">B and τ stay hidden via</text>
+  <text
+     x="575"
+     y="126"
+     text-anchor="middle"
+     font-family="Arial"
+     font-size="11"
+     fill="#555"
+     id="text13">commitments + ZK.</text>
   <!-- Row 2 -->
-  <rect x="20" y="165" width="205" height="100" rx="8" fill="#27ae60" opacity="0.13" stroke="#27ae60" stroke-width="2"/>
-  <text x="122" y="187" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="#27ae60">🔗 Query Binding</text>
-  <text x="122" y="207" text-anchor="middle" font-family="Arial" font-size="11" fill="#555">Client can't inject queries</text>
-  <text x="122" y="223" text-anchor="middle" font-family="Arial" font-size="11" fill="#555">outside committed set.</text>
-  <text x="122" y="241" text-anchor="middle" font-family="Arial" font-size="11" fill="#555">Merkle binding enforces.</text>
-
-  <rect x="245" y="165" width="205" height="100" rx="8" fill="#e74c3c" opacity="0.13" stroke="#e74c3c" stroke-width="2"/>
-  <text x="347" y="187" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="#c0392b">✍️ Non-Repudiation</text>
-  <text x="347" y="207" text-anchor="middle" font-family="Arial" font-size="11" fill="#555">Server signs every answer.</text>
-  <text x="347" y="223" text-anchor="middle" font-family="Arial" font-size="11" fill="#555">Cannot deny outputs used</text>
-  <text x="347" y="241" text-anchor="middle" font-family="Arial" font-size="11" fill="#555">in a complaint.</text>
-
-  <rect x="470" y="165" width="210" height="100" rx="8" fill="#c0392b" opacity="0.13" stroke="#c0392b" stroke-width="2"/>
-  <text x="575" y="187" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="#c0392b">📊 Accountability</text>
-  <text x="575" y="207" text-anchor="middle" font-family="Arial" font-size="11" fill="#555">Degradation detected with</text>
-  <text x="575" y="223" text-anchor="middle" font-family="Arial" font-size="11" fill="#555">prob. ≥ 1 − 2⁻¹²⁸</text>
-  <text x="575" y="241" text-anchor="middle" font-family="Arial" font-size="11" fill="#555">(N=5000, ε'=0.1)</text>
+  <rect
+     x="20"
+     y="165"
+     width="205"
+     height="100"
+     rx="8"
+     fill="#27ae60"
+     opacity="0.13"
+     stroke="#27ae60"
+     stroke-width="2"
+     id="rect13" />
+  <text
+     x="122"
+     y="187"
+     text-anchor="middle"
+     font-family="Arial"
+     font-size="13"
+     font-weight="bold"
+     fill="#27ae60"
+     id="text14">🔗 Query Binding</text>
+  <text
+     x="122"
+     y="207"
+     text-anchor="middle"
+     font-family="Arial"
+     font-size="11"
+     fill="#555"
+     id="text15">Client can't inject queries</text>
+  <text
+     x="122"
+     y="223"
+     text-anchor="middle"
+     font-family="Arial"
+     font-size="11"
+     fill="#555"
+     id="text16">outside committed set.</text>
+  <text
+     x="122"
+     y="241"
+     text-anchor="middle"
+     font-family="Arial"
+     font-size="11"
+     fill="#555"
+     id="text17">Merkle binding enforces.</text>
+  <rect
+     x="245"
+     y="165"
+     width="205"
+     height="100"
+     rx="8"
+     fill="#e74c3c"
+     opacity="0.13"
+     stroke="#e74c3c"
+     stroke-width="2"
+     id="rect17" />
+  <text
+     x="347"
+     y="187"
+     text-anchor="middle"
+     font-family="Arial"
+     font-size="13"
+     font-weight="bold"
+     fill="#c0392b"
+     id="text18">✍️ Non-Repudiation</text>
+  <text
+     x="347"
+     y="207"
+     text-anchor="middle"
+     font-family="Arial"
+     font-size="11"
+     fill="#555"
+     id="text19">Server signs every answer.</text>
+  <text
+     x="347"
+     y="223"
+     text-anchor="middle"
+     font-family="Arial"
+     font-size="11"
+     fill="#555"
+     id="text20">Cannot deny outputs used</text>
+  <text
+     x="347"
+     y="241"
+     text-anchor="middle"
+     font-family="Arial"
+     font-size="11"
+     fill="#555"
+     id="text21">in a complaint.</text>
+  <rect
+     x="470"
+     y="165"
+     width="210"
+     height="100"
+     rx="8"
+     fill="#c0392b"
+     opacity="0.13"
+     stroke="#c0392b"
+     stroke-width="2"
+     id="rect21" />
+  <text
+     x="575"
+     y="187"
+     text-anchor="middle"
+     font-family="Arial"
+     font-size="13"
+     font-weight="bold"
+     fill="#c0392b"
+     id="text22">📊 Accountability</text>
+  <text
+     x="575"
+     y="207"
+     text-anchor="middle"
+     font-family="Arial"
+     font-size="11"
+     fill="#555"
+     id="text23">Degradation detected with</text>
+  <text
+     x="575"
+     y="223"
+     text-anchor="middle"
+     font-family="Arial"
+     font-size="11"
+     fill="#555"
+     id="text24">prob. ≥ 1 − 2⁻¹²⁸</text>
+  <text
+     x="575"
+     y="241"
+     text-anchor="middle"
+     font-family="Arial"
+     font-size="11"
+     fill="#555"
+     id="text25">(N=5000, ε'=0.1)</text>
 </svg>
