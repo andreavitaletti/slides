@@ -100,9 +100,10 @@ style: |
 
 # Problem Statement
 
-> **Goal:** Design a protocol that simultaneously guarantees:
-> - The client cannot extract useful answers without paying
-> - The server cannot (i.e. it will be caught) degrade quality after payment
+**Goal:** Design a protocol that simultaneously guarantees:
+- The client cannot extract useful answers without paying
+- The server cannot (i.e. it will be caught) degrade quality after payment
+- Efficient mechanism (current solutions are too complex and inefficient)
 
 <div class="box">
 
