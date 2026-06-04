@@ -21,8 +21,8 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:zoom="1.2214286"
-     inkscape:cx="350"
-     inkscape:cy="159.64912"
+     inkscape:cx="349.99999"
+     inkscape:cy="137.54386"
      inkscape:window-width="1536"
      inkscape:window-height="795"
      inkscape:window-x="0"
@@ -31,6 +31,12 @@
      inkscape:current-layer="svg22" />
   <defs
      id="defs2">
+    <rect
+       x="599.29823"
+       y="59.76608"
+       width="87.602337"
+       height="243.15787"
+       id="rect3" />
     <marker
        id="arz"
        markerWidth="10"
@@ -126,40 +132,48 @@
      y="75"
      text-anchor="middle"
      font-family="Arial"
-     font-size="13"
+     font-size="13px"
      font-weight="bold"
      fill="#8e44ad"
-     id="text8">IVC Steps (×N)</text>
+     id="text8"><tspan
+       sodipodi:role="line"
+       id="tspan1"
+       x="302"
+       y="75">Incrementa Verfiable</tspan><tspan
+       sodipodi:role="line"
+       id="tspan2"
+       x="302"
+       y="91.25">Computation Steps (×N)</tspan></text>
   <text
      x="302"
-     y="96"
+     y="106"
      text-anchor="middle"
      font-family="Arial"
-     font-size="11"
-     fill="#555"
+     font-size="11px"
+     fill="#555555"
      id="text9">Per query: Merkle +</text>
   <text
      x="302"
-     y="113"
+     y="123"
      text-anchor="middle"
      font-family="Arial"
-     font-size="11"
-     fill="#555"
+     font-size="11px"
+     fill="#555555"
      id="text10">EdDSA signature verify</text>
   <text
      x="302"
-     y="130"
+     y="140"
      text-anchor="middle"
      font-family="Arial"
-     font-size="11"
-     fill="#555"
+     font-size="11px"
+     fill="#555555"
      id="text11">Pipelined with server</text>
   <text
      x="302"
-     y="152"
+     y="162"
      text-anchor="middle"
      font-family="Arial"
-     font-size="12"
+     font-size="12px"
      font-weight="bold"
      fill="#8e44ad"
      id="text12">⏱ ~21.5 s / step</text>
@@ -249,48 +263,102 @@
      id="line19" />
   <!-- Result box -->
   <rect
-     x="20"
-     y="212"
-     width="665"
-     height="58"
-     rx="8"
+     x="19.922535"
+     y="211.92253"
+     width="564.45319"
+     height="58.15493"
+     rx="6.7904143"
      fill="#27ae60"
      opacity="0.15"
      stroke="#27ae60"
-     stroke-width="2"
+     stroke-width="1.84507"
      id="rect19" />
   <text
-     x="352"
+     x="302"
      y="234"
      text-anchor="middle"
      font-family="Arial"
-     font-size="13"
+     font-size="13px"
      font-weight="bold"
      fill="#1a7a3c"
      id="text19">π_complaint submitted on-chain</text>
   <text
-     x="352"
+     x="302"
      y="256"
      text-anchor="middle"
      font-family="Arial"
-     font-size="12"
-     fill="#555"
+     font-size="12px"
+     fill="#555555"
      id="text20">Smart contract verifies → if valid: refund client + slash server deposit</text>
   <!-- Total time note -->
   <text
-     x="610"
-     y="295"
+     x="86.023407"
+     y="289.26901"
      text-anchor="middle"
      font-family="Arial"
-     font-size="11"
-     fill="#888"
+     font-size="11px"
+     fill="#888888"
      id="text21">Total ≈ 7.7 min (20 queries)</text>
   <text
-     x="610"
-     y="310"
+     x="86.023407"
+     y="304.26901"
      text-anchor="middle"
      font-family="Arial"
-     font-size="11"
-     fill="#888"
+     font-size="11px"
+     fill="#888888"
      id="text22">Peak RAM: 8.6 GB</text>
+  <text
+     xml:space="preserve"
+     id="text2"
+     style="text-align:start;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect3);display:inline;fill:#000000"><tspan
+       x="599.29883"
+       y="70.684127"
+       id="tspan4">IVC allows the </tspan><tspan
+       x="599.29883"
+       y="85.684127"
+       id="tspan5">proof to be </tspan><tspan
+       x="599.29883"
+       y="100.68413"
+       id="tspan6">updated </tspan><tspan
+       x="599.29883"
+       y="115.68413"
+       id="tspan7">incrementally. </tspan><tspan
+       x="599.29883"
+       y="130.68413"
+       id="tspan8">The client
+</tspan><tspan
+       x="599.29883"
+       y="145.68413"
+       id="tspan9">can generate </tspan><tspan
+       x="599.29883"
+       y="160.68413"
+       id="tspan10">the proof for </tspan><tspan
+       x="599.29883"
+       y="175.68413"
+       id="tspan11">step j − 1 while </tspan><tspan
+       x="599.29883"
+       y="190.98544"
+       id="tspan12">waiting for the </tspan><tspan
+       x="599.29883"
+       y="205.98544"
+       id="tspan13">server’s </tspan><tspan
+       x="599.29883"
+       y="220.98544"
+       id="tspan14">response to
+</tspan><tspan
+       x="599.29883"
+       y="235.98544"
+       id="tspan15">query j, so the </tspan><tspan
+       x="599.29883"
+       y="250.98544"
+       id="tspan16">proving work is </tspan><tspan
+       x="599.29883"
+       y="265.98544"
+       id="tspan17">pipelined with </tspan><tspan
+       x="599.29883"
+       y="280.98546"
+       id="tspan18">the query/</tspan><tspan
+       x="599.29883"
+       y="295.98546"
+       id="tspan19">response</tspan></text>
 </svg>

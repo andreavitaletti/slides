@@ -15,6 +15,15 @@ style: |
   h2 {
     color: #34495e;
   }
+  section {
+    background-image: url('images/sapienza.png');
+    background-repeat: no-repeat;
+    background-position: top 20px right 20px;
+    background-size: 70px auto;
+  }
+  section::after {
+    content: attr(data-marpit-pagination) '/' attr(data-marpit-pagination-total);
+  }
   .box {
     background-color: var(--color-primary, #1f38c5);
     color: white;
@@ -160,7 +169,7 @@ If $b = 0$: no attestation produced, no payment.
 
 </div>
 
-Only the **decision bit b** is revealed — no model outputs, no benchmark details.
+Only the **decision bit b** is revealed: no model outputs, no benchmark details.
 
 ---
 
