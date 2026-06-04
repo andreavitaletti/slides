@@ -15,6 +15,12 @@ style: |
   h2 {
     color: #2c3e50;
   }
+  section {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/a/a5/Stemma_sapienza.png');
+    background-repeat: no-repeat;
+    background-position: top 20px right 20px;
+    background-size: 70px auto;
+  }
   .box {
     background-color: #1b3a4b;
     color: white;
@@ -72,7 +78,7 @@ style: |
 
 ### A no-nonsense discussion on the blockchain-based perspectives
 
-Ilaria Lunesu; Lodovica Marchesi; Andrea Pinna; Roberto Tonelli; **Andrea Vitaletti**
+Ilaria Lunesu; Lodovica Marchesi; Andrea Pinna; **Roberto Tonelli**; **Andrea Vitaletti**
 
 
 ---
@@ -107,6 +113,7 @@ h1 {
 
  > It is a comprehensive standard (e.g. [GS1 Arch](https://gs1.eu/wp-content/uploads/2022/08/Digital_Product_Passport_Architecture_GS1inEurope_March_2022.pdf), [GS1 GSCN](https://ref.gs1.org/standards/genspecs/gscn/2023/Provisional-GSCN-23-103-DP.pdf)) digital record that tracks a product’s lifecycle, materials, origin, and environmental footprint to promote a circular, sustainable economy.
 
+![bg right:50% fit](images1/DPP1.png)
 
 ---
 
@@ -180,9 +187,10 @@ If the input data is forged, the blockchain simply records a lie in an immutable
 
 - **The Transparency Paradox**
   - Regulators/consumers demand complete transparency of supply chains.
+- **Layered information**
+  - Public, Authority, Private
 - **Commercial Threats:**
-  - Competitors can reverse-engineer manufacturing processes from material weights and locations.
-  - Public shipping transaction logs reveal supplier pricing, production volumes, and margins.
+  - Competitors can reverse-engineer manufacturing processes. Public shipping transaction logs reveal supplier pricing, production volumes, and margins.
 
 <div class="box-red">
 
@@ -212,15 +220,14 @@ If the cost of maintaining the digital history exceeds the residual value of the
 # Issue #4: Governance, Standards, and Walled Silos
 
 - **Fragmentation into Silos of Trust**
-  - There will never be a single, global "DPP Blockchain".
-  - Automotive (Catena-X), Luxury (Aura), and Tech (Battery Alliance) run separate, incompatible networks.
+  - There will never be a single, global "DPP Blockchain". Recyclers handling complex e-waste must integrate with dozens of different ledger networks and data schemas.
+  - Automotive ([Catena-X](https://catena-x.net/)), Luxury ([Aura](https://auraconsortium.com/)), and Tech ([Global Battery Alliance](https://www.globalbattery.org/) and [Circularise](https://www.circularise.com/) run separate, incompatible networks.
 
-- **Interoperability Failures:**
-  - Cross-chain bridging is highly insecure and prone to hacks.
-  - Recyclers handling complex e-waste must integrate with dozens of different ledger networks and data schemas.
+- **Interoperability still challenging:**
+  - Cross-chain bridging are prone to hacks (e.g. smart contract vulnerabilities, multi-signature threshold etc.).
 
 - **Centralized Cartels:**
-  - Private consortia validators are controlled by market leaders, allowing them to freeze records, censor competitors, or set high API fees.
+  - Private consortia validators might be controlled by market leaders.
 
 ---
 
@@ -268,7 +275,7 @@ table {
 | :--- | :---: | :---: | :---: | :---: |
 | **Trust Model** | Trust in government | Trust in "industry" cartel (IBSI/EBSI) | Math + Miner/Validator set | Cryptographic peer-to-peer |
 | **Data Privacy** | High (controlled access) | Medium (leaks to rivals) | Extremely low (public) | Excellent (off-chain) |
-| **Write Cost** | Negligible | Low | High &amp; Unstable | Zero |
+| **Write Cost** | Negligible | Low | High &amp; Unstable | Low |
 | **Scalability** | High | Medium | Low | High |
 | **GIGO Security** | Checked at input | Checked by consortium | Unchecked | Checked by peer-to-peer audit |
 
