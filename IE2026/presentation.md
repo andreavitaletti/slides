@@ -329,6 +329,19 @@ The digital twin enables **faster, cheaper, smarter** fermentation optimisation 
 
 ---
 
+
+# Thank you!
+
+### Questions?
+
+<!-- :envelope: vitaletti@diag.uniroma1.it -->
+<i class="fa-solid fa-at"></i> vitaletti@diag.uniroma1.it
+<i class="fa-brands fa-github"></i> [https://andreavitaletti.github.io/](https://andreavitaletti.github.io/)
+
+![bg right:35% fit](images/qrcode.png)
+
+---
+
 # Discussion
 
 - How can **digital twin frameworks** best handle the tension between data scarcity and model accuracy in biological systems?
