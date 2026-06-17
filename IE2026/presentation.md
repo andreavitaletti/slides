@@ -75,8 +75,8 @@ A. Contaldo, B. Morozzo della Rocca, **A. Vitaletti**
 
 # Context: Beer Fermentation & Ultrasound
 
-- Beer fermentation is a **slow, resource-intensive** industrial process — experiments take days and are costly to repeat
-- **Ultrasound technology** (20–50 kHz, low power) has emerged as a promising tool to accelerate yeast activity
+- Beer fermentation is a **slow, resource-intensive** industrial process: experiments take days and are costly to repeat
+- **Ultrasound technology** (20–50 kHz, low power) is a promising tool to accelerate yeast activity
 
 <div class="highlight">
 
@@ -96,7 +96,7 @@ A **digital twin** is a virtual representation of a physical system that stays c
 <div class="highlight">
 
 ### <i class="fa-solid fa-lightbulb"></i> Key Benefit
-Physical fermentation trials are **slow and expensive** — the digital twin complements them with rapid simulation and intelligent actuation.
+Physical fermentation trials are **slow and expensive**, the digital twin complements them with **rapid simulation and intelligent actuation**.
 
 </div>
 
@@ -115,11 +115,11 @@ Biological datasets are limited by **slow, manual sampling** each growth curve t
 <div class="warn">
 
 ### <i class="fa-solid fa-triangle-exclamation"></i> Data Scarcity Challenge
-~100 data points — approximately **100× smaller** than the reference study [Palacios et al., 2014]
+~100 data points: approximately **100× smaller** than the reference study [Palacios et al., 2014]
 
 </div>
 
-Classical training is ineffective. High risk of overfitting.
+Classical training is ineffective: high risk of overfitting.
 
 --- 
 
@@ -132,7 +132,7 @@ Classical training is ineffective. High risk of overfitting.
 | Temperature | Medium temperature (normalised) |
 | Initial / final OD | Yeast density measured at 600 nm |
 
-> Points sharing the same duty cycle, frequency, and initial density belong to the **same biological growth curve** — treated as a group in cross-validation.
+> Points sharing the same duty cycle, frequency, and initial density belong to the **same biological growth curve**: treated as a group in cross-validation.
 
 ---
 
