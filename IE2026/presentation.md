@@ -96,7 +96,7 @@ A **digital twin** is a virtual representation of a physical system that stays c
 <div class="highlight">
 
 ### <i class="fa-solid fa-lightbulb"></i> Key Benefit
-Physical fermentation trials are **slow and expensive**, the digital twin complements them with **rapid simulation and intelligent actuation**.
+Physical fermentation trials are **slow and expensive**, the digital twin complements them with **rapid simulation (growth model) and intelligent actuation**.
 
 </div>
 
@@ -130,20 +130,32 @@ Classical training is ineffective: high risk of overfitting.
 | Ultrasound duty cycle | Fraction of time transducer is active |
 | Irradiation frequency | Ultrasonic frequency applied (normalised) |
 | Temperature | Medium temperature (normalised) |
-| Initial / final OD | Yeast density measured at 600 nm |
+| Initial / final Optical Density | Yeast density measured at 600 nm |
 
 > Points sharing the same duty cycle, frequency, and initial density belong to the **same biological growth curve**: treated as a group in cross-validation.
 
+
 ---
 
-# Predictive Model: Gompertz + Bayesian NN
+# Gompertz Growth Model
 
-The core of the digital twin is a **Gompertz growth model** whose parameters, **D** = total growth amplitude, **μ** = max growth rate and **λ** = lag time,  are inferred by a Bayesian neural network:
+- **D** = total growth amplitude
+- **μ** = max growth rate
+- **λ** = lag time
+
+Predicted by a Bayesian Neural Network.
+
+**Yeast Density at time t**:
 
 $$E[N_t \mid N_0, D, \mu, \lambda] = N_0 + D \cdot \exp\!\left(-\exp\!\left(1 + \frac{\mu e (\lambda - t)}{D}\right)\right)$$
 
 ![bg right:50% fit](images/Gompertz_params_1.png)
 
+---
+
+# Goal
+
+![bg right:80% fit](images/nn_gompertz_architecture.png)
 
 ---
 
@@ -153,7 +165,7 @@ We have "clear", physical intuition for the outputs ($D$, $\mu$, $\lambda$), but
 
 <div class="highlight">
 
-Translate a Prior on the Output Space into a Prior on the Parameter Space via the Likelihood function and MCMC sampling.
+Translate a Prior on the Output Space ($D$, $\mu$, $\lambda$) into a Prior on the Parameter Space ($w$) via the Likelihood function and MCMC sampling.
 
 </div>
 
@@ -168,7 +180,9 @@ $$p(\mathbf{w} \mid y) \propto p(y \mid \mathbf{w}) \cdot p(\mathbf{w})$$
 - $p(y \mid \mathbf{w})$ is the Likelihood: How well do the weights explain the raw sensor data?
 - $p(\mathbf{w})$ is the Weight Prior
 
-If a randomly proposed step in the weights ($\mathbf{w}^*$) causes the network to output an impossible value for $D$, $\mu$, or $\lambda$, the mathematical probability of that weight configuration is zero. Therefore, the biological output limits act as a filter that shapes the allowed weight space.
+If a configuration of weights $\mathbf{w}^*$ causes the impossible value for $D$, $\mu$, or $\lambda$ $\implies$ $P(\mathbf{w}^*)=0$ 
+
+The biological output limits act as a filter that shapes the allowed weight space.
 
 ---
 
@@ -182,7 +196,9 @@ Because we can't analytically calculate how to constrain the weights to get the 
 ---
 
 ![bg fit](images/bayesian_montecarlo_priors_process.png)
+<!-- >
 ![bg fit](images/nn_gompertz_architecture.png)
+-->
 
 ---
 
@@ -191,14 +207,14 @@ Because we can't analytically calculate how to constrain the weights to get the 
 
 Given the **limited dataset**, classical training is ineffective. We adopt [Palacios et al., 2014]:
 
-1. **Prior assignment** — probability distributions encode biological domain knowledge
-2. **Random Walk Metropolis** — explores the posterior to find valid weight configurations; Metropolis-Hastings criterion escapes local maxima
-3. **Network ensemble** — each accepted MCMC state instantiates a distinct NN outputting D, μ, λ
-4. **Final prediction** — parameters averaged across all sampled networks → Gompertz curve
+1. **Prior assignment**: probability distributions encode biological domain knowledge
+2. **Random Walk Metropolis**: explores the posterior to find valid weight configurations; Metropolis-Hastings criterion escapes local maxima
+3. **Network ensemble**: each accepted MCMC state instantiates a distinct NN outputting D, μ, λ
+4. **Final prediction**: parameters averaged across all sampled networks → Gompertz curve
 
 <div class="highlight">
 
-For **small datasets**, highly informative priors are essential. For larger datasets, weakly informative priors such as $\mathcal{N}(0, 100)$ are sufficient — as also recommended in [Palacios et al.].
+For **small datasets**, highly informative priors are essential. For larger datasets, weakly informative priors such as $\mathcal{N}(0, 100)$ are sufficient (as also recommended in [Palacios et al.]).
 
 </div>
 
@@ -221,7 +237,7 @@ Removing informative priors causes a **~7× increase in MSE**:
 <div class="warn">
 
 ### <i class="fa-solid fa-triangle-exclamation"></i> Takeaway
-In fermentation, experiments are too slow to generate large datasets — **biological prior knowledge is the only practical regulariser**.
+In fermentation, experiments are too slow to generate large datasets. **Biological prior knowledge is the only practical regulariser**.
 
 </div>
 
@@ -231,7 +247,10 @@ In fermentation, experiments are too slow to generate large datasets — **biolo
 
 ![bg right:55% fit](images/fold_metrics.png)
 
-> MSE is ~88× higher than [Palacios et al.] — attributable to dataset size (~100× smaller), single MCMC chain, and optical density (OD) measurement scale differences.
+MSE is ~88× higher than [Palacios et al.]
+- dataset size (~100× smaller)
+- single MCMC chain
+- optical density (OD) measurement scale differences.
 
 ---
 
@@ -295,11 +314,18 @@ The digital twin enables **faster, cheaper, smarter** fermentation optimisation 
 
 # Future Work
 
-- <i class="fa-solid fa-database"></i> **Expand dataset** — collect more growth curves to relax prior constraints and improve generalisation
-- <i class="fa-solid fa-eye"></i> **Automate OD sensing** — currently manual; real-time density measurement is the key bottleneck for full automation
-- <i class="fa-solid fa-thermometer-half"></i> **Integrate thermal control** — close the temperature actuation loop
-- <i class="fa-solid fa-arrows-spin"></i> **Multiple MCMC chains** — improve posterior exploration beyond the current single-chain implementation
-- <i class="fa-solid fa-flask"></i> **Full closed-loop validation** — experimentally validate the feedback-optimisation framework end-to-end
+- <i class="fa-solid fa-database"></i> **Expand dataset.** Collect more growth curves to relax prior constraints and improve generalisation
+- <i class="fa-solid fa-chart-area"></i> **Beyond Gompertz.** Investigate alternative growth models to better capture yeast dynamics
+- <i class="fa-solid fa-eye"></i> **Automate OD sensing.** Currently manual; real-time density measurement is the key bottleneck for full automation
+- <i class="fa-solid fa-arrows-spin"></i> **Multiple MCMC chains.** Improve posterior exploration beyond the current single-chain implementation
+- <i class="fa-solid fa-flask"></i> **Full closed-loop validation.** Experimentally validate the feedback-optimisation framework end-to-end
+
+---
+
+# Most importantly, enjoy your beer.
+
+![bg right:55% fit](images/cheers.jpg)
+
 
 ---
 
