@@ -255,11 +255,9 @@ ___
 <i class="fa-solid fa-at"></i> vitaletti@diag.uniroma1.it
 <i class="fa-brands fa-github"></i> [https://andreavitaletti.github.io/](https://andreavitaletti.github.io/)
 
-[https://github.com/andreavitaletti/slides/blob/main/ICSSC2026/presentation.pdf](https://github.com/andreavitaletti/slides/blob/main/ICSSC2026/presentation.pdf)
+[https://github.com/andreavitaletti/slides/tree/main/ICAISF2026](https://github.com/andreavitaletti/slides/tree/main/ICAISF2026)
 
-[https://arxiv.org/pdf/2501.15962](https://arxiv.org/pdf/2501.15962)
-
-![bg right:35% fit](img/QRCODE.png)
+![bg right:35% fit](img/qrcode_github.com.png)
 
 ---
 
