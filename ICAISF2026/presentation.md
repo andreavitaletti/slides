@@ -4,7 +4,7 @@ marp: true
 theme: beam
 paginate: true
 header: "Collective Seed Storage"
-footer: "ICAISF2026"
+footer: "ICSSC2026"
 style: |
   @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css');
   section {
@@ -65,14 +65,13 @@ https://fontawesome.com/icons
 
 # The Need for Seed Diversity
 
-- Over 50,000 edible plants exist worldwide, but **just 15 provide 90% of food energy intake**.
-- More than 95% of crop **genetic erosion** studies report changes in diversity, with nearly 80% showing evidence of loss [[1]](https://doi.org/10.1111/nph.17733).
-- Crop Wild Relatives (CWRs) hold genetic resources absent from cultivated varieties, useful to improve productivity, resilience and quality.
+- Over 50,000 edible plants exist worldwide, but **just 15 provide 90% of food energy intake** (e.g., rice, corn, wheat).
+- More than 95% of crop **genetic erosion** articles report changes in diversity, with nearly 80% showing evidence of loss [[1]](https://doi.org/10.1111/nph.17733).
 
 <div class="box">
 
-### :seedling: Genetic diversity
-Vital to adapt to climate change, pests, diseases and evolving societal needs
+### :seedling: Genetic diversity 
+Vital to adapt to climate change, extreme weather, pests, and diseases
 
 </div>
 
@@ -82,23 +81,22 @@ Vital to adapt to climate change, pests, diseases and evolving societal needs
 
 # Conservation Strategies
 
-| Criteria | In Situ | Ex Situ |
-|----------|---------|---------|
-| **Location** | Natural environment / farms | Seed banks, seed vaults, labs |
+| Criteria | In Situ Conservation | Ex Situ Conservation |
+|----------|----------------------|----------------------|
+| **Location** | Natural environment / farms | Seed banks, seed vaults |
 | **Evolution** | Plants adapt naturally | Static; no natural evolution |
-| **Risk of Loss** | Higher (land-use, climate) | Lower (controlled conditions) |
-| **Cultural Link** | Strong | Weak or absent |
-| **Access & Sharing** | Local and informal | Global, formal (e.g. SMTA) |
-| **Best Use** | Wild relatives, landraces | Major crops, backup, breeding |
+| **Risk of Loss**| Higher (climate, land-use) | Lower (controlled conditions) |
+| **Access** | Local and informal | Global access via formal mechanisms |
+| **Cost** | Lower short-term cost | Higher cost (infrastructure) |
+| **Best Use** | Wild relatives, landraces | Major crops, backup |
 
 ---
 
-# Seed Banks and the SGSV
+# Svalbard Global Seed Vault (SGSV)
 
-- A seed bank safely conserves the genes that make each plant variety unique, and keeps them available for future use.
-- The **Svalbard Global Seed Vault (SGSV)** is unanimously considered the global **backup** facility for seed banks worldwide.
-- 2023: **1,267,127 samples**, from **>100 genebanks**, representing **>6,000 species**.
-- Only depositors can withdraw their own seeds (unlike the Millennium Seed Bank).
+- A global backup facility for seed banks worldwide.
+- Safeguards over 1.2 million samples representing >6,000 plant species.
+- Unanimously considered the **backup seed facility that provides the highest standards of safety and security.**
 
 ![bg right:40%](img/SGSV.jpg)
 
@@ -106,21 +104,28 @@ Vital to adapt to climate change, pests, diseases and evolving societal needs
 
 # Open Problem
 
-- Our analysis of the SGSV **Seed Portal** shows that the vast majority of species have a **single depositor**.
-- *Oryza sativa* (Asian rice): **29 depositors**, 171,193 accessions, 136 countries.
-- *Hygroryza aristata* (a CWR of rice): **1 depositor**, 4 accessions, 1 country.
-- **The Threat:** if a disaster hits both the primary seed bank and the vault, low-redundancy species could be lost forever.
+- The vast majority of species, mostly CWR in the SGSV, have only a **single depositor** [[2]](https://seedvault.nordgen.org/Search).
+- **The Threat:** if a disaster hits both the primary seed bank and the vault, the species could be lost.
 
 ![bg right:40% fit](img/distr.png)
 
 ---
 
-# Our Vision: Collective Seed Storage (CSS)
+# Orthodox Seeds and Storage
 
-- **Key insight:** the temperature conditions of domestic freezers can meet FAO standards for long-term seed conservation.
-- **Shared-economy approach:** repurpose a tiny, idle portion of home freezers to store seeds.
-- **First attempt** at a peer-to-peer infrastructure to preserve seed diversity, complementing centralized genebanks.
-- Each household becomes a micro-node, increasing redundancy with minimal infrastructure investment.
+- **Orthodox Seeds:** Approximately 90% of species can retain viability if dried and kept at low temperatures (e.g., wheat, rice, legumes).
+- **Storage Standards:** FAO recommends [[3]](https://doi.org/10.4060/cc0021en) long-term storage at **-18°C and 15% relative humidity.**
+- Subzero freezers are acceptable if ideal conditions are not available.
+
+![bg right:40% fit](img/surv_rate.jpg)
+
+---
+
+# Collective Seed Storage (CSS)
+
+- **Domestic freezers provide suitable conditions for seed conservation** 
+- **Vision:** Each household becomes a micro-node in a distributed seed conservation system. Citizens are active contributors to food system resilience and biodiversity conservation
+- **Shared Economy Approach:** Sharing a tiny, idle portion of home freezers for seed preservation, to drastically increase redundancy and the overall availability of seeds with minimal infrastructure investments.
 
 ![bg right:35% fit](img/vision.png)
 
@@ -130,104 +135,129 @@ Vital to adapt to climate change, pests, diseases and evolving societal needs
 
 To ensure feasibility and active participation, the system must meet:
 
-1. **Storage Standards (R1):** comply with FAO long-term storage standards (approx. -18°C). Subzero acceptable if ideal conditions unavailable.
-2. **User-Friendly (R2):** simple installation with off-the-shelf equipment; only home WiFi assumed.
-3. **Longevity (R3):** run for at least 1 year without user intervention.
-4. **Incentivization (R4):** support suitable incentive mechanisms to reward long-term participation.
+1. **Storage Standards (R1):** FAO long-term storage conditions (approx. -18°C). Subzero acceptable.
+2. **User-Friendly (R2):** Simple installation using off-the-shelf equipment and home WiFi.
+3. **Longevity (R3):** Operate for at least 1 year without user intervention (battery life).
+4. **Incentivization (R4):** Implement mechanisms to reward users for their long-term commitment.
 
 ---
 
-# Proof-of-Concept: Architecture
+# Architecture
 
-- **Sensor:** DHT22 (temperature/humidity) inside an airtight seed container in the freezer.
-- **Sensor Node:** ESP32 Devkit V1 placed *outside* the freezer, connected via three tiny wires (R2).
-  - Placing the ESP32 inside hinders WiFi (>40% packet loss) and battery efficiency drops in the cold.
-- **Communication:** ESP32 transmits readings via WiFi to a Blockchain smart contract that dispenses incentives (R4).
+<!--
+https://www.emojicheatsheet.com/
+https://github.com/ikatyang/emoji-cheat-sheet
+-->
 
-![bg right:45% fit](img/css.drawio.png)
 
----
+- R2: friendly  :slightly_smiling_face:
 
-# R1: Storage Conditions
-
-- Monitored a **BOSCH KGN39X23** domestic freezer set to -18°C, samples every 5 minutes.
-- After an initial transient, temperature **oscillates** noticeably.
-- Ideal Standard 4.2.3 not fully met, but conditions are consistent with **acceptable subzero storage**.
-
-![bg right:60% fit](img/visualization.png)
+![bg right:65% fit](img/css.drawio.png)
 
 ---
 
-# R3: Energy Consumption & Lifetime
+# R1: Storage
 
-- **init task:** ~2400ms @ ~50mA (≈0.03mAh)
-- **com task:** ~3160ms @ ~100mA (≈0.09mAh)
-- **deep sleep:** 10µA nominal
-- 3.6V, 1.5Ah LiFePo4 battery
-- With a sleep period **X ≥ 0.73 hours**, the node meets the **1-year lifetime** requirement.
+<!--
+- **Experiment:** Monitoring a Bosch domestic freezer set to -18°C.
+- **Results:** Subzero conditions are easily met, though temperature fluctuates (as per acceptable secondary standards).
+--> 
 
-![bg right:55% fit](img/current_new.png)
+- FAO standards :neutral_face:
+- Subzero conditions :slightly_smiling_face:
 
----
-
-# R4: Incentives
-
-- Blockchain-based **lottery**, inspired by DePIN (token-incentivized participatory sensing).
-- Users are eligible to enter **only if** their readings stay within an acceptable storage range.
-- Minimalistic smart contract deployed on Sepolia testnet, accessed via the Infura API.
-- Up to 32 packed readings per transaction, reducing communication overhead.
-
-![bg right:55% fit](img/lottery.png)
+![bg right:65% fit](img/visualization.png)
 
 ---
 
-# Broader Impact: UN SDGs
+<!--
+# R4. Energy Consumption
 
-<div class="box">
+- **Challenge:** Node must run for >1 year on a 3.6V LiFePo4 battery.
+- **Strategy:** Low duty cycle using Deep Sleep (10µA nominal).
+- **Active Cycle:**
+  - **Init Task:** ~2400ms at ~50mA.
+  - **Com Task:** ~3160ms at ~100mA.
+- **Result:** With a sleep period of >0.73 hours, the system meets the 1-year lifetime requirement.
 
-### CSS contributes to several UN Sustainable Development Goals
-
-- **SDG 2 — Zero Hunger:** distributed backup infrastructure against genetic erosion
-- **SDG 12 — Responsible Consumption & Production:** reuses existing freezer capacity instead of new infrastructure
-- **SDG 13 — Climate Action:** preserves genetic resources needed for climate adaptation
-- **SDG 17 — Partnerships for the Goals:** potential integration with the Multilateral System (MLS)
-
-</div>
+![bg right:40% fit](img/current_new.png)
 
 ---
 
-# Future Work
+-->
 
-- **Long-term storage studies:** how close can domestic freezers get to ideal Standard 4.2.3 conditions? Variability across freezer models.
-- **Energy harvesting:** exploit the inside/outside thermal gradient for energy-neutral operation.
-- **User studies:** willingness to participate; game-theoretic engagement mechanisms.
-- **Institutional integration:** connect CSS with the Multilateral System (MLS) and governance of seed exchanges.
-- Evaluate economic costs and long-term participation strategies.
+# R3: Lifetime 
+
+- **> 1 year** :slightly_smiling_face:
+- 1.5Ah LiFePo4 battery
+- Duty Cycle: active period about 6 seconds, sleep period >0.73 hours
+
+![bg right:65% fit](img/current_new.png)
+
+---
+
+# R4: Incentive
+
+- Blockchain Lottery :neutral_face:
+
+![bg right:65% fit](img/lottery.png)
 
 ---
 
 # Conclusions
 
-- Even the SGSV, the world's most renowned backup facility, shows **limited redundancy** for many species.
-- **CSS** is a shared-economy vision: domestic freezers as a distributed infrastructure for long-term seed storage.
-- Our Proof-of-Concept demonstrates the **technical feasibility** of IoT-based monitoring and blockchain-based incentives.
-- Acceptable subzero storage conditions are achievable in ordinary domestic freezers.
+- CSS can support the preservation of seed diversity by transforming urban citizens into "active" agents of agricultural resilience. 
+- Households become micro-nodes within a distributed seed conservation system
+- Our Proof-of-Concept demonstrates the feasibility of the core technical components underlying this vision.
 
 ![bg right:35% fit](img/vision.png)
 
 ---
 
+# United Nations Sustainable Development Goals (SDGs).
+
+- SDG 2 (Zero Hunger)
+- SDG 12 (Responsible Consumption and Production)
+- SDG 13 (Climate Action)
+- SDG 17 (Partnerships for the Goals)
+
+![bg right:35% fit](img/Sustainable_Development_Goals.png)
+
+---
+
+# A recent visit at seed banks in Rome
+
+![bg](Photos/IMG_20260721_111740317_HDR.jpg)
+![bg](Photos/IMG_20260721_111842274_HDR.jpg)
+![bg](Photos/IMG_20260721_112431320_HDR.jpg)
+
+---
+
+# Discussion
+
+- A modern approach to seed preservation should promote <u>more active citizen participation</u> (e.g., Seed Guardians) that extends beyond the mere act of storage.
+-  Although the preservation of seeds in domestic freezers is a novel and valuable practice, it may remain, to some extent, a "passive" activity. 
+
+___
+
+# Future Vision: [www.seedpeers.net](https://www.seedpeers.net/)
+
+![bg fit](img/micro-greenhouse.png)
+
+--- 
+
+
 # Thank you!
 
 ### Questions?
 
+<!-- :envelope: vitaletti@diag.uniroma1.it -->
 <i class="fa-solid fa-at"></i> vitaletti@diag.uniroma1.it
-
 <i class="fa-brands fa-github"></i> [https://andreavitaletti.github.io/](https://andreavitaletti.github.io/)
 
-[https://github.com/andreavitaletti/slides/blob/main/ICAISF2026/presentation.pdf](https://github.com/andreavitaletti/slides/blob/main/ICAISF2026/presentation.pdf)
+[https://github.com/andreavitaletti/slides/blob/main/ICSSC2026/presentation.pdf](https://github.com/andreavitaletti/slides/blob/main/ICSSC2026/presentation.pdf)
 
-Code: [https://github.com/andreavitaletti/PlatformIO/tree/main/Projects/web3E_SC](https://github.com/andreavitaletti/PlatformIO/tree/main/Projects/web3E_SC)
+[https://arxiv.org/pdf/2501.15962](https://arxiv.org/pdf/2501.15962)
 
 ![bg right:35% fit](img/QRCODE.png)
 
@@ -235,7 +265,7 @@ Code: [https://github.com/andreavitaletti/PlatformIO/tree/main/Projects/web3E_SC
 
 # Image sources
 
-- Slide 1, 6, 12: generated by Gemini
+- Slide 6: https://doi.org/10.1111/rec.13174
 - Slide 2: https://medium.com/thenextnorm/importance-of-genetic-diversity-in-agriculture-b9f88f5fda55
 - Slide 4: https://en.wikipedia.org/wiki/Svalbard_Global_Seed_Vault#/media/File:Svalbard_Global_Seed_Vault_February_2025.jpg
-- Slide 5: https://doi.org/10.1111/rec.13174
+- Slide 1,7,12,13,15 generated by Gemini
