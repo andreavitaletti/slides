@@ -89,6 +89,13 @@ Proponents claim blockchain is the *only* solution to:
 
 ---
 
+<video src="test.mp4" autoplay loop muted width="600"></video>
+
+---
+
+<video src="test.mp4" controls width="700"></video>
+
+---
 
 <div class="box-red">
 
