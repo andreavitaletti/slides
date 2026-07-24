@@ -151,6 +151,7 @@ To ensure feasibility and active participation, the system must meet:
 
 - FAO standards :neutral_face:
 - Subzero conditions :slightly_smiling_face:
+- "Food" for prediction models
 
 ![bg right:65% fit](img/visualization.png)
 
@@ -190,8 +191,7 @@ https://github.com/ikatyang/emoji-cheat-sheet
 
 # Conclusions
 
-- CSS can support the preservation of seed diversity by transforming urban citizens into "active" agents of agricultural resilience. 
-- Households become micro-nodes within a distributed seed conservation system
+- CSS can support the preservation of seed diversity by transforming urban citizens into "active" agents of agricultural resilience: households become micro-nodes within a distributed seed conservation system
 - Our Proof-of-Concept demonstrates the feasibility of the core technical components underlying this vision.
 
 ![bg right:35% fit](img/vision.png)
