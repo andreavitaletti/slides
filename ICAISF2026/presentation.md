@@ -142,20 +142,6 @@ To ensure feasibility and active participation, the system must meet:
 
 ---
 
-# Architecture
-
-<!--
-https://www.emojicheatsheet.com/
-https://github.com/ikatyang/emoji-cheat-sheet
--->
-
-
-- R2: friendly  :slightly_smiling_face:
-
-![bg right:65% fit](img/css.drawio.png)
-
----
-
 # R1: Storage
 
 <!--
@@ -170,21 +156,19 @@ https://github.com/ikatyang/emoji-cheat-sheet
 
 ---
 
+# Architecture
+
 <!--
-# R4. Energy Consumption
+https://www.emojicheatsheet.com/
+https://github.com/ikatyang/emoji-cheat-sheet
+-->
 
-- **Challenge:** Node must run for >1 year on a 3.6V LiFePo4 battery.
-- **Strategy:** Low duty cycle using Deep Sleep (10µA nominal).
-- **Active Cycle:**
-  - **Init Task:** ~2400ms at ~50mA.
-  - **Com Task:** ~3160ms at ~100mA.
-- **Result:** With a sleep period of >0.73 hours, the system meets the 1-year lifetime requirement.
 
-![bg right:40% fit](img/current_new.png)
+- R2: friendly  :slightly_smiling_face:
+
+![bg right:65% fit](img/css.drawio.png)
 
 ---
-
--->
 
 # R3: Lifetime 
 
@@ -214,18 +198,11 @@ https://github.com/ikatyang/emoji-cheat-sheet
 
 ---
 
-# United Nations Sustainable Development Goals (SDGs).
-
-- SDG 2 (Zero Hunger)
-- SDG 12 (Responsible Consumption and Production)
-- SDG 13 (Climate Action)
-- SDG 17 (Partnerships for the Goals)
-
-![bg right:35% fit](img/Sustainable_Development_Goals.png)
+![bg fit](img/Sustainable_Development_Goals_h.png)
 
 ---
 
-# A recent visit at seed banks in Rome
+# A recent visit to the seed bank at Rome's Botanic Garden
 
 ![bg](Photos/IMG_20260721_111740317_HDR.jpg)
 ![bg](Photos/IMG_20260721_111842274_HDR.jpg)
@@ -242,7 +219,7 @@ ___
 
 # Future Vision: [www.seedpeers.net](https://www.seedpeers.net/)
 
-![bg fit](img/micro-greenhouse.png)
+![bg fit](img/micro-greenhouse-MF.png)
 
 --- 
 
