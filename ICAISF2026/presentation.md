@@ -204,9 +204,9 @@ https://github.com/ikatyang/emoji-cheat-sheet
 
 # A recent visit to the seed bank at Rome's Botanic Garden
 
-![bg](Photos/IMG_20260721_111740317_HDR.jpg)
-![bg](Photos/IMG_20260721_111842274_HDR.jpg)
-![bg](Photos/IMG_20260721_112431320_HDR.jpg)
+![bg](img/IMG_20260721_111740317_HDR.jpg)
+![bg](img/IMG_20260721_111842274_HDR.jpg)
+![bg](img/IMG_20260721_112431320_HDR.jpg)
 
 ---
 
